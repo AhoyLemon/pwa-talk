@@ -1,0 +1,114 @@
+
+<section>
+  <section>
+    <h1><code>overflow</code></h1>
+    <aside class="notes" data-markdown="data-markdown">
+      First difficult thing. It makes this famous image....
+      
+    </aside>
+  </section>
+  <section>
+    <figure><img src="img/css-awesome-mug.png"/></figure>
+    <aside class="notes" data-markdown="data-markdown">
+      **overflow** is how you get this famous image
+      
+    </aside>
+  </section>
+  <section><code>CSS</code>
+    <pre><code class="css" style="font-size:2.85vw">.box { 
+  border:0.1em solid white; 
+  width: 4em;
+  padding:0.3em;
+}
+</code></pre>
+  </section>
+  <section><code>HTML</code>
+    <pre><code class="html"><div class="box">
+  CSS IS AWESOME
+</div>
+</code></pre>
+  </section>
+  <section>
+    <div id="box-1">CSS IS AWESOME</div>
+    <style>
+      #box-1 { font-size:9vh; font-weight:bold; border:0.1em solid white; width:4em; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em;
+        margin-left:auto; margin-right:auto;
+        }
+    </style>
+    <aside class="notes" data-markdown="data-markdown">
+      ## Let's solve this one way!!!
+      
+    </aside>
+  </section>
+  <section>
+    <pre style="font-size:3vw;"><code class="css">overflow:hidden;
+</code></pre>
+  </section>
+  <section>
+    <div id="box-3">CSS IS AWESOME</div>
+    <style>
+      #box-3 { font-size:9vh; font-weight:bold; border:0.1em solid white; width:4em; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em; margin-left:auto; margin-right:auto;
+        overflow:hidden;
+      }
+      
+    </style>
+  </section>
+  <section>
+    <pre style="font-size:3vw;"><code class="css">overflow-y:hidden;
+</code></pre>
+  </section>
+  <section>
+    <div id="box-5" title="CSS IS AWESOME">CSS IS AWESOME</div>
+    <style>
+      #box-5 { font-size:9vh; font-weight:bold; border:0.1em solid white; width:4em; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em; margin-left:auto; margin-right:auto;
+        overflow-y:hidden;
+      }
+      
+    </style>
+  </section>
+  <section>
+    <pre style="font-size:3vw;"><code class="css">word-break:break-word;
+</code></pre>
+  </section>
+  <section>
+    <div id="box-2">CSS IS AWESOME</div>
+    <style>
+      #box-2 { font-size:9vh; font-weight:bold; border:0.1em solid white; width:4em; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em;
+        word-break:break-word; margin-left:auto; margin-right:auto;
+      }
+      
+    </style>
+  </section>
+  <section>
+    <pre style="font-size:3vw;"><code class="css">text-overflow:ellipsis;
+</code></pre>
+  </section>
+  <section>
+    <div id="box-4" title="CSS IS AWESOME">CSS IS AWESOME</div>
+    <style>
+      #box-4 { font-size:9vh; font-weight:bold; border:0.1em solid white; width:4em; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em; margin-left:auto; margin-right:auto;
+        overflow:hidden; text-overflow:ellipsis;
+      }
+      
+    </style>
+  </section>
+  <section><code>CSS</code>
+    <pre><code class="css" style="font-size:2.85vw">.box { 
+  border:0.1em solid white; 
+  width: 4em;
+  padding:0.3em;
+}
+</code></pre>
+  </section>
+  <section>
+    <s>width: 4em;</s>
+  </section>
+  <section>
+    <div id="box-6" title="CSS IS AWESOME">CSS IS AWESOME</div>
+    <style>
+      #box-6 { font-size:8.5vh; font-weight:bold; border:0.1em solid white; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em; display:inline-block; }
+      
+    </style>
+  </section>
+  <section><sub><strong>Original idea: </strong><span> <a href="https://css-tricks.com/author/brundolf/" target="_blank">Brandon Smith</a>'s blog post on <a href="https://css-tricks.com/css-is-awesome/" target="_blank">CSS Tricks</a>. </span></sub></section>
+</section>

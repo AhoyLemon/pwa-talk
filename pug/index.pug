@@ -1,0 +1,211 @@
+- const talkTitle = "I'm gonna make you stop hating CSS."
+doctype html
+head
+  include partials/_head.pug
+body  
+  include partials/_mixins.pug
+
+  .reveal
+    .slides
+      section
+
+        // Little Big Uno
+        +videoBG('CkIhFpdJcPM',65)
+          h2.shadowed
+            | Progressive Web Apps!
+            sup *
+
+          .a-talk-by(style="margin-top:35.5vh;")
+            b.white.shadowed
+              | (a talk by @AhoyLemon)
+            br
+            //sub(style="font-size:26px; line-height:50%") * The talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
+              
+        section
+          h1 Hi!
+          h2.fragment My name is Lemon.
+          p.fragment (I make websites.)
+
+        section
+          div(style="font-size:68px; font-family:'Lucida Console', Monaco, monospace;") 
+            span websites 
+            span.fragment != apps
+
+        //-section
+          .grid(columns="3")
+            .box
+              img(src="svg/logos/pug.svg")
+            .box.fragment
+              img(src="svg/logos/sass.svg")
+            .box.fragment
+              img(src="svg/logos/vue.svg")
+            .box.fragment
+              img(src="svg/logos/ember.svg")
+            .box.fragment
+              img(src="svg/logos/dotnet-2.svg")
+            .box.fragment
+              img(src="svg/logos/php.svg")
+            .box.fragment
+              img(src="svg/logos/bourbon.svg")
+            .box.fragment
+              img(src="svg/logos/beer.svg")
+            .box.fragment
+              img(src="img/gin.jpg")
+
+        section
+          .grid(columns="3" style="margin-bottom:80px;")
+            .box
+              img(src="svg/logos/swift.svg" style="width:100%")
+            .box
+              img(src="svg/logos/java.svg" style="width:100%")
+            .box
+              img(src="svg/logos/flutter.svg")
+            
+          .grid(columns="3")
+            .box
+              img(src="svg/logos/html-5.svg")
+            .box
+              img(src="svg/logos/css-3.svg")
+            .box
+              img(src="svg/logos/javascript.svg")
+            
+
+        section
+          img(src="svg/logos/css-3.svg")
+
+        //-section
+          h1 I love CSS.
+          h2.fragment You hate CSS.
+          aside.notes(data-markdown).
+            Raise your hand
+        
+        section
+          h1 CSS is easy
+            span.fragment 
+              | ?
+              br
+              | No.
+
+        section
+          h1.strobe CSS IS GREAT
+
+
+        section
+          img(src="img/gif/css_family-guy.gif")
+          aside.notes(data-markdown).
+            If you type **CSS** into Google Image Search
+            
+
+        section
+          video(src="video/css_blocks.mp4" autoplay loop)
+          aside.notes(data-markdown).
+            More like this
+
+      section
+        h3 Today's agenda:
+        ol
+          li Things that are weird
+          li Things that are great
+          li Things you can try now
+
+      section
+        section(data-background="img/gif/focus.gif")
+          h3.shadowed Let's get weird!
+
+      include partials/_overflow.pug
+
+      include partials/_position.pug
+
+      include partials/_float.pug
+
+      section
+        section(data-background="img/bg/hope.jpg")
+
+      include partials/_grid.pug
+
+      //-section
+        section
+          .grid(columns="2")
+            figure
+              img(src="img/amy-kapernick.jpg")
+            figcaption(style="line-height:190%")
+              div Amy Kapernick
+              div Perth, Australia
+              div
+                b CSS Grid - What is this Magic?!
+              div
+                span Today @ 15:00. Room 3.
+
+      section
+        section(data-background="img/bg/ie.png")
+
+        section(data-background="img/bg/caniuse-grid-2019-08-20.png")
+
+        section(data-background="img/bg/caniuse-grid2-2019-08-20.png")
+
+        section
+          p 
+            b Takeaways:
+          ul
+            li IE 10 & 11 (US 2.1%) has  
+              i some
+              |  support (needs prefix & testing)
+            li No support in IE 9- (US 0.6%)
+            li All other lackings in browsers 1+ years behind on updates
+
+        section(data-background="img/bg/caniuse-flex.png")
+
+        section(data-background="img/bg/caniuse-flex2.png")
+
+      include partials/_flex.pug
+
+      include partials/_cascade.pug
+
+      include partials/_games.pug
+
+      section
+        
+        section
+          img(src="img/gif/css_family-guy.gif")
+        section
+          video(src="video/css_bottles.mp4" style="height:65vh" autoplay loop)
+        section
+          video(src="video/css_dock.mp4" style="width:100%" autoplay loop)
+        section
+          video(src="video/css_rock.mp4" autoplay loop)
+        section
+          video(src="video/css_rollers.mp4" style="height:65vh" autoplay loop)
+          p
+            | CSS GIFs by 
+            a(href="https://twitter.com/lynnandtonic" target="_blank") Lynn Fisher
+      
+      // THANK YOU
+      section
+        section(data-background="img/gif/simone_lemon_maker_faire.gif")
+          h1.white(style="padding-top:40vh; text-shadow:0.05em 0.05em 0.05em black, -1px -1px 1px black") Thank you.
+          p.white.shadowed
+            a(href="https://ahoylemon.xyz" target="_blank") 
+              strong ahoylemon.xyz
+        
+        section(data-background="#e6e924")
+          figure
+            img(src="svg/lemon.svg" style="width:212px; height:212px;")
+    
+  script(src='lib/js/head.min.js')
+  script(src='js/reveal.js')
+  script.
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      history: true,
+      autoPlayMedia: true,
+      //slideNumber: true,
+      dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      { src: 'plugin/zoom-js/zoom.js' },
+      { src: 'plugin/notes/notes.js', async: true },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+      ]
+    });

@@ -1,0 +1,178 @@
+body {
+  height: 180vh;
+  background: white;
+  background-image: url("../img/grid.png"); }
+  body.gridbody {
+    height: auto; }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.floatygrid .gridbox:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.box {
+  padding: 20px;
+  background-image: url("../img/grid.png");
+  -webkit-box-shadow: 0 0 12px black;
+  box-shadow: 0 0 12px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .box.fixed {
+    position: fixed;
+    background: red; }
+  .box.absolute {
+    position: absolute;
+    background: blue; }
+  .box.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    background: green; }
+  .box.relative {
+    position: relative;
+    background: yellow; }
+  .box.static {
+    position: static;
+    background: beige; }
+  .box.single {
+    width: 50vh;
+    height: 50vh;
+    margin-top: 100px;
+    margin-left: 160px; }
+    .box.single.sticky {
+      top: 0; }
+  .box.fifth {
+    width: 50vh;
+    height: 50vh;
+    margin-top: 90px; }
+    .box.fifth:nth-child(2) {
+      left: 20%; }
+    .box.fifth:nth-child(3) {
+      left: 40%; }
+    .box.fifth:nth-child(4) {
+      left: 60%; }
+    .box.fifth:nth-child(5) {
+      left: 80%; }
+    .box.fifth.static, .box.fifth.relative {
+      float: left; }
+    .box.fifth.fixed {
+      top: 140px; }
+    .box.fifth.absolute {
+      left: 58%;
+      top: 40px; }
+    .box.fifth.sticky {
+      top: 0;
+      margin-top: 100px; }
+  .box code {
+    font-size: 24px; }
+
+.float-holder {
+  padding: 20px;
+  height: auto; }
+  .float-holder article {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.9); }
+  .float-holder p {
+    font-size: 24px;
+    -webkit-margin-before: 0;
+    margin-block-start: 0; }
+  .float-holder .clearfix:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .float-holder .floatbox {
+    width: 25%;
+    float: left; }
+    .float-holder .floatbox img {
+      max-width: 100%; }
+
+.cascade-test article {
+  background: #fff;
+  padding: 20px;
+  margin: 20px;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.9);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px; }
+  .grid figure {
+    margin: 0; }
+  .grid[columns="2"] {
+    grid-template-columns: repeat(2, 1fr); }
+  .grid .gridbox img {
+    width: 100%; }
+
+figure.card {
+  background: white;
+  padding: 1.25em;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.9);
+  font-size: 16px; }
+  figure.card img {
+    margin-bottom: 20px; }
+  figure.card p {
+    font-size: 22px;
+    -webkit-margin-before: 0;
+    margin-block-start: 0; }
+  figure.card p:last-child {
+    margin-bottom: 0; }
+
+.float-left {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px; }
+
+.floatygrid {
+  margin-left: -15px; }
+  .floatygrid .gridbox {
+    float: left;
+    width: calc(33% - 30px);
+    margin: 0 15px; }
+    .floatygrid .gridbox img {
+      width: 100%; }
+
+.cocktail {
+  background: #e9f6fa;
+  padding: 2em; }
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .flex-container figure {
+    margin: 0; }
+  .flex-container .flexbox {
+    -ms-flex-preferred-size: calc(33% - 20px);
+    flex-basis: calc(33% - 20px);
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    margin-bottom: 30px; }
+    .flex-container .flexbox img {
+      width: 100%; }
