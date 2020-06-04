@@ -1,4 +1,4 @@
-- const talkTitle = "I'm gonna make you stop hating CSS."
+- const talkTitle = "PWA Talk"
 doctype html
 head
   include partials/_head.pug
@@ -20,7 +20,8 @@ body
               | (a talk by @AhoyLemon)
             br
             //sub(style="font-size:26px; line-height:50%") * The talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
-              
+      
+      section
         section
           h1 Hi!
           h2.fragment My name is Lemon.
@@ -31,38 +32,10 @@ body
             span websites 
             span.fragment != apps
 
-        //-section
-          .grid(columns="3")
-            .box
-              img(src="svg/logos/pug.svg")
-            .box.fragment
-              img(src="svg/logos/sass.svg")
-            .box.fragment
-              img(src="svg/logos/vue.svg")
-            .box.fragment
-              img(src="svg/logos/ember.svg")
-            .box.fragment
-              img(src="svg/logos/dotnet-2.svg")
-            .box.fragment
-              img(src="svg/logos/php.svg")
-            .box.fragment
-              img(src="svg/logos/bourbon.svg")
-            .box.fragment
-              img(src="svg/logos/beer.svg")
-            .box.fragment
-              img(src="img/gin.jpg")
-
         section
-          .grid(columns="3" style="margin-bottom:80px;")
-            .box
-              img(src="svg/logos/swift.svg" style="width:100%")
-            .box
-              img(src="svg/logos/java.svg" style="width:100%")
-            .box
-              img(src="svg/logos/flutter.svg")
-            //-.box
-              img(src="svg/logos/c_plusplus.svg")
+          h3 Let me define my terms.
             
+        section
           .grid(columns="3")
             .box
               img(src="svg/logos/html-5.svg")
@@ -71,7 +44,150 @@ body
             .box
               img(src="svg/logos/javascript.svg")
 
+        section
+          blockquote
+            p I want you to build me a website!
+            cite The Client
+          blockquote
+            p Sounds good.
+            cite me
+
+        section
+          blockquote
+            p I want you to build me a mobile app!
+            cite The Client
+          blockquote
+            p Okay, but based on what you're trying to do, a mobile app might not be the best solution. What about a website instead?
+            cite me
+        
+        section
+          blockquote
+            p I want you to build me a mobile app, and I'll pay you a 
+              strong lot of money 
+              | to do it.
+            cite The Client
+          blockquote
+            p Okay, let's build a mobile app.
+            cite me
+
+        section
+          .grid(columns="3")
+            figure
+              img(src="svg/logos/cordova_256.png" style="width:100%")
+            figure
+            figure
+              img(src="svg/logos/phonegap.svg" style="width:100%")
+            
+        section
+          
+          p Building an app in Cordova/phonegap..
+
+          ol
+            li Build an HTML website.
+            li Wrap it in a vendor-specific webview.
+            li Add plugins.
+            li Release to the store.
+              sup *
+            i * herein lies the problem.
+
+        section
+          p Actually, a few problems...
+
+          ol
+            li app signing
+            li plugin versioning
+            li incompatable dependencies
+            li style & content rules
+            li changing rules
+            li possibility of rejection
+            li waiting
+
+        section
+          blockquote
+            strong From: 
+            span Google Play Support
+            br
+            strong To: 
+            span me
+            p We have rejected your latest build from the Google Play Store, because it violates our policy on embedded YouTube videos.
+            p Please see this link that kind of sort of describes the policy.
+
+        section
+          blockquote
+            strong From: 
+            span me
+            br
+            strong To: 
+            span Google Play Support
+            p Okay, thank you so much for your note. I am confused on the cause though, as my app does not have any embedded YouTube videos.
+            p Can you please explain?
+
+        section
+          blockquote
+            strong From: 
+            span Google Play Support
+            br
+            strong To: 
+            span me
+            p The embedded YouTube videos in your app violate our policy on embedded YouTube videos.
+
+        section
+          blockquote
+            strong From: 
+            span me
+            br
+            strong To: 
+            span Google Play Support
+            p Right... Except the app doesn't 
+              i have 
+              span any YouTube videos, of any sort.
+
+        section
+          blockquote
+            strong From: 
+            span Google Play Support
+            br
+            strong To: 
+            span me
+            br
+            p We do not offer support.
+
+        section
+          blockquote
+            strong From: 
+            span.strobe Google Play Support
+            br
+            strong To: 
+            span me
+            br
+            p We do not offer 
+              span.strobe support.
+
+        section
+          p 
+            | This is a specific problem.
+            br
+            | pointing to a greater concern.
+
+        section
+          h2 The Internet is not a walled garden.
+
       section
+        section
+          blockquote
+            p So, when you say you want a mobile app, what do you really want?
+            cite what I should have said
+
+        section
+          p “I want something that...
+          ul
+            li has an app-like interface
+            li can be installed on a user's machine
+            li will work offline
+            li uses camera & microphone
+            li geolocation
+            li
+              strong has push notifications
 
         section
           img(src="svg/pwa.svg")
@@ -95,7 +211,6 @@ body
             li native sharing
         
         section(data-background="gif/gnome-fascinating.gif")
-            
 
         section
           img(src="svg/logos/css-3.svg")

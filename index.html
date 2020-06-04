@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>I'm gonna make you stop hating CSS.</title>
+  <title>PWA Talk</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Work+Sans:300,400,700">
   <link rel="stylesheet" href="css/reveal.css">
   <link rel="stylesheet" href="css/theme/night.css">
@@ -30,6 +30,8 @@
               <!--sub(style="font-size:26px; line-height:50%") * The talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long-->
             </div>
           </section>
+      </section>
+      <section>
         <section>
           <h1>Hi!</h1>
           <h2 class="fragment">My name is Lemon.</h2>
@@ -39,19 +41,131 @@
           <div style="font-size:68px; font-family:'Lucida Console', Monaco, monospace;"> <span>websites </span><span class="fragment">!= apps</span></div>
         </section>
         <section>
-          <div class="grid" columns="3" style="margin-bottom:80px;">
-            <div class="box"><img src="svg/logos/swift.svg" style="width:100%"></div>
-            <div class="box"><img src="svg/logos/java.svg" style="width:100%"></div>
-            <div class="box"><img src="svg/logos/flutter.svg"></div>
-          </div>
+          <h3>Let me define my terms.</h3>
+        </section>
+        <section>
           <div class="grid" columns="3">
             <div class="box"><img src="svg/logos/html-5.svg"></div>
             <div class="box"><img src="svg/logos/css-3.svg"></div>
             <div class="box"><img src="svg/logos/javascript.svg"></div>
           </div>
         </section>
+        <section>
+          <blockquote>
+            <p>I want you to build me a website!</p>
+            <cite>The Client</cite>
+          </blockquote>
+          <blockquote>
+            <p>Sounds good.</p>
+            <cite>me</cite>
+          </blockquote>
+        </section>
+        <section>
+          <blockquote>
+            <p>I want you to build me a mobile app!</p>
+            <cite>The Client</cite>
+          </blockquote>
+          <blockquote>
+            <p>Okay, but based on what you're trying to do, a mobile app might not be the best solution. What about a website instead?</p>
+            <cite>me</cite>
+          </blockquote>
+        </section>
+        <section>
+          <blockquote>
+            <p>I want you to build me a mobile app, and I'll pay you a <strong>lot of money </strong>to do it.</p>
+            <cite>The Client</cite>
+          </blockquote>
+          <blockquote>
+            <p>Okay, let's build a mobile app.</p>
+            <cite>me</cite>
+          </blockquote>
+        </section>
+        <section>
+          <div class="grid" columns="3">
+            <figure><img src="svg/logos/cordova_256.png" style="width:100%"></figure>
+            <figure></figure>
+            <figure><img src="svg/logos/phonegap.svg" style="width:100%"></figure>
+          </div>
+        </section>
+        <section>
+          <p>Building an app in Cordova/phonegap..</p>
+          <ol>
+            <li>Build an HTML website.</li>
+            <li>Wrap it in a vendor-specific webview.</li>
+            <li>Add plugins.</li>
+            <li>Release to the store.<sup>*</sup></li><i>* herein lies the problem.</i>
+          </ol>
+        </section>
+        <section>
+          <p>Actually, a few problems...</p>
+          <ol>
+            <li>app signing</li>
+            <li>plugin versioning</li>
+            <li>incompatable dependencies</li>
+            <li>style & content rules</li>
+            <li>changing rules</li>
+            <li>possibility of rejection</li>
+            <li>waiting</li>
+          </ol>
+        </section>
+        <section>
+          <blockquote><strong>From: </strong><span>Google Play Support</span><br><strong>To: </strong><span>me</span>
+            <p>We have rejected your latest build from the Google Play Store, because it violates our policy on embedded YouTube videos.</p>
+            <p>Please see this link that kind of sort of describes the policy.</p>
+          </blockquote>
+        </section>
+        <section>
+          <blockquote><strong>From: </strong><span>me</span><br><strong>To: </strong><span>Google Play Support</span>
+            <p>Okay, thank you so much for your note. I am confused on the cause though, as my app does not have any embedded YouTube videos.</p>
+            <p>Can you please explain?</p>
+          </blockquote>
+        </section>
+        <section>
+          <blockquote><strong>From: </strong><span>Google Play Support</span><br><strong>To: </strong><span>me</span>
+            <p>The embedded YouTube videos in your app violate our policy on embedded YouTube videos.</p>
+          </blockquote>
+        </section>
+        <section>
+          <blockquote><strong>From: </strong><span>me</span><br><strong>To: </strong><span>Google Play Support</span>
+            <p>Right... Except the app doesn't <i>have </i><span>any YouTube videos, of any sort.</span></p>
+          </blockquote>
+        </section>
+        <section>
+          <blockquote><strong>From: </strong><span>Google Play Support</span><br><strong>To: </strong><span>me</span><br>
+            <p>We do not offer support.</p>
+          </blockquote>
+        </section>
+        <section>
+          <blockquote><strong>From: </strong><span class="strobe">Google Play Support</span><br><strong>To: </strong><span>me</span><br>
+            <p>We do not offer <span class="strobe">support.</span></p>
+          </blockquote>
+        </section>
+        <section>
+          <p>
+             This is a specific problem.<br>pointing to a greater concern.</p>
+        </section>
+        <section>
+          <h2>The Internet is not a walled garden.</h2>
+        </section>
       </section>
       <section>
+        <section>
+          <blockquote>
+            <p>So, when you say you want a mobile app, what do you really want?</p>
+            <cite>what I should have said</cite>
+          </blockquote>
+        </section>
+        <section>
+          <p>“I want something that...</p>
+          <ul>
+            <li>has an app-like interface</li>
+            <li>can be installed on a user's machine</li>
+            <li>will work offline</li>
+            <li>uses camera & microphone</li>
+            <li>geolocation</li>
+            <li><strong>has push notifications</strong></li>
+          </ul>
+        </section>
         <section><img src="svg/pwa.svg"></section>
         <section>
           <p>What is a PWA?</p>
