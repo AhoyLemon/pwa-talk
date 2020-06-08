@@ -15,11 +15,12 @@ body
             | Progressive Web Apps!
             sup *
 
-          .a-talk-by(style="margin-top:35.5vh;")
+          .a-talk-by(style="margin-top:25.5vh;")
             b.white.shadowed
               | (a talk by @AhoyLemon)
             br
-            //sub(style="font-size:26px; line-height:50%") * The talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
+            br
+            div.shadowed(style="font-size:26px; line-height:120%") * This talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
       
       section
         section
@@ -191,6 +192,26 @@ body
 
         section
           img(src="svg/pwa.svg")
+
+        section
+          p A spec written by...
+
+          .grid(columns="3" style="margin-bottom:2em;")
+            figure
+              img(src="img/logos/chrome.png" style="max-height:20vh;")
+            figure
+              img(src="img/logos/firefox.png" style="max-height:20vh;")
+            figure
+              img(src="img/logos/edge.png" style="max-height:20vh;")
+          .fragment
+            p Supported by
+            .grid(columns="3")
+              figure
+                img(src="img/logos/safari.png" style="max-height:20vh;")
+              figure
+                img(src="img/logos/brave.png" style="max-height:20vh;")
+              figure
+                img(src="img/logos/opera.png" style="max-height:20vh;")
         
         section
           p What is a PWA?
@@ -204,122 +225,513 @@ body
           ul
             li installable
             li works offline
-            li evergreen updates
-            li push notifications
+            li notifications
             li managed caching
             li runs chromeless
             li native sharing
-        
+            li wake control
+            li multitouch
+            li bluetooth
+
         section(data-background="gif/gnome-fascinating.gif")
 
         section
-          img(src="svg/logos/css-3.svg")
+          p What do you need?
+          ol
+            li 
+              strong HTTPS connection
+            li 
+              code manifest.json
+            li
+              code service-worker.js
 
-        //-section
-          h1 I love CSS.
-          h2.fragment You hate CSS.
-          aside.notes(data-markdown).
-            Raise your hand
-        
         section
-          h1 CSS is easy
-            span.fragment 
-              | ?
+          p Where can I get a HTTPS certificate?
+          p 
+            i PS: For free?
+
+          ul
+            li GitHub Pages
+            li Let's Encrypt
+            li Cloudflare
+            li Many cPanel-based hosting platforms
               br
-              | No.
+              sub (personal rec's: Green Geeks & InMotion)
 
         section
-          h1.strobe CSS IS GREAT
+          p Regardless: get a cert, turn it on, and direct 
+            i all
+            |  HTTP traffic to HTTPS.
 
 
         section
-          img(src="img/gif/css_family-guy.gif")
-          aside.notes(data-markdown).
-            If you type **CSS** into Google Image Search
-            
+          code manifest.json
+
+          p A json file located in the root of your project, which will define some values...
+          ul
+            li Name & Description
+            li Color Scheme
+            li Languages
+            li Orientation
+            li URL scope
+            li Icons
+
+          //pre(style="font-size:1.5rem;")
+            code.json(style="max-height:55vh;").
+              {
+                "manifest_version": 2.01,
+                "name": "damn dog",
+                "short_name": "damndog",
+                "description": "A guessing game for wikiHow illustrations.",
+                "default_locale": "en",
+                "display": "standalone",
+                "scope": "/",
+                "start_url": "/",
+                "theme_color": "#222730",
+                "background_color": "#222730",
+                "icons": [
+                  {
+                    "src": "/android-chrome-36x36.png",
+                    "sizes": "36x36",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/android-chrome-48x48.png",
+                    "sizes": "48x48",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/android-chrome-72x72.png",
+                    "sizes": "72x72",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/android-chrome-96x96.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/android-chrome-144x144.png",
+                    "sizes": "144x144",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/android-chrome-192x192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/android-chrome-256x256.png",
+                    "sizes": "256x256",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/android-chrome-384x384.png",
+                    "sizes": "384x384",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/android-chrome-512x512.png",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                  }
+                ]
+              }
 
         section
-          video(src="video/css_blocks.mp4" autoplay loop)
-          aside.notes(data-markdown).
-            More like this
+          code service-worker.js
+          p A single javascript file (can be called anything), which will set up functions for installation, caching, permissions, and features.
+          //pre(style="font-size:1.5rem;")
+            code.js(style="max-height:55vh;").
+
+              self.addEventListener('install', e => {
+                // once the SW is installed, go ahead and fetch the resources
+                // to make this work offline
+                e.waitUntil(
+                  caches.open(cacheName).then(cache => {
+                    return cache.addAll([
+                      '/index.html',
+                      // Put critical files here.
+                    ]).then(() => self.skipWaiting());
+                  })
+                );
+              });
+
+        section
+          p Reference both these files in your index.html
 
       section
-        h3 Today's agenda:
-        ol
-          li Things that are weird
-          li Things that are great
-          li Things you can try now
+        section
+          div
+            img(src="img/before-sw.png")
+          div.fragment
+            img(src="img/after-sw.png")
+
+        section
+          p The service worker gets its own lifecycle.
+
+        section
+          code cachebusting...
+          pre(style="font-size:1.5rem;")
+            code.html(style="max-height:55vh;").
+              &lt;script src=&quot;site.min.js?updated=xwJEKgJfizi&quot;&gt;&lt;script&gt;
 
       section
-        section(data-background="img/gif/focus.gif")
-          h3.shadowed Let's get weird!
-
-      include partials/_overflow.pug
-
-      include partials/_position.pug
-
-      include partials/_float.pug
+        h2
+          | Now, let's see some 
+          span.strobe real-world examples
 
       section
-        section(data-background="img/bg/hope.jpg")
+        section
+          figure
+            a(href="https://partypartypartyparty.party" target="_blank")
+              img(src="img/party-square.png" style="max-height:50vh;")
+              figcaption
+                | partypartypartyparty.party
 
-      include partials/_grid.pug
+        section
+          blockquote
+            p I need to be able to party efficiently when I don't have internet.
+            cite a friend
+          blockquote.fragment
+            p That's an excellent point!
+            cite me
 
-      //-section
+        section
+          code service-worker.js
+          pre(style="font-size:1.5rem;")
+            code.js(style="max-height:55vh;").
+              const offlineUrl = '/index.html';
+              const offlineFiles = [
+                '/index.html',
+                '/manifest.json',
+                '/css/party.css',
+                '/js/min/jquery.min.js',
+                '/js/min/howler.min.js',
+                '/js/min/party.min.js',
+                '/audio/party.mp3',
+                '/audio/venga.mp3'
+              ];
+
+              /*****
+              On install, the service worker will take all our
+              required files, and store those locally. */
+              self.addEventListener('install', function(event) {
+                var offlineRequest = new Request(offlineFiles);
+                event.waitUntil(
+                  fetch(offlineRequest).then(function(response) {
+                    return caches.open('offline').then(function(cache) {
+                      return cache.put(offlineRequest, response);
+                    });
+                  })
+                );
+              });
+
+              /************
+              Then, on a fetch request, the service worker 
+              will check for response.
+              If everything seems to be offline, serve the
+              offline files instead.  */
+              self.addEventListener('fetch', function(event) {
+                var request = event.request;
+                if (request.method === 'GET') {
+                  event.respondWith(
+                    fetch(request).catch(function(error) {
+                      console.error(
+                        '[onfetch] Failed. Serving cached offline fallback ' +
+                        error
+                      );
+                      return caches.open('offline').then(function(cache) {
+                        return cache.match(offlineUrl);
+                      });
+                    })
+                  );
+                }
+              });
+
+        section
+          code manifest.json
+          pre(style="font-size:1.5rem;")
+            code.json(style="max-height:55vh;").
+              {
+                "manifest_version": 2,
+                "name": "PARTY PARTY PARTY PARTY PARTY",
+                "short_name": "PARTY",
+                "description": "PARTY PARTY PARTY PARTY PARTY PARTY PART PARTY PARTY PARTY PARTY PARTY PARTY",
+                "default_locale": "en",
+                "display": "standalone",
+                "scope": "/",
+                "start_url": "/",
+                "theme_color": "#d1d1d1",
+                "background_color": "#d1d1d1",
+                "icons": [
+                  {
+                    "src": "/icon-36x36.png",
+                    "sizes": "36x36",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/icon-48x48.png",
+                    "sizes": "48x48",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/icon-72x72.png",
+                    "sizes": "72x72",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/icon-96x96.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/icon-144x144.png",
+                    "sizes": "144x144",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/icon-192x192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/icon-256x256.png",
+                    "sizes": "256x256",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/icon-384x384.png",
+                    "sizes": "384x384",
+                    "type": "image/png"
+                  },
+                  {
+                    "src": "/icon-512x512.png",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                  }
+                ]
+              }
+
+        section
+          code index.html
+          pre(style="font-size:1.5rem;")
+            code.js(style="max-height:55vh;").
+              // Register the service worker
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                  // Registration was successful
+                  console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }).catch(function(err) {
+                  // registration failed :(
+                  console.log('ServiceWorker registration failed: ', err);
+                });
+              }
+
+        section
+          figure(style="text-align:center;")
+            img(src="img/party-install-prompt.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
         section
           .grid(columns="2")
-            figure
-              img(src="img/amy-kapernick.jpg")
-            figcaption(style="line-height:190%")
-              div Amy Kapernick
-              div Perth, Australia
-              div
-                b CSS Grid - What is this Magic?!
-              div
-                span Today @ 15:00. Room 3.
+            figure(style="text-align:center;")
+              img(src="img/home-screen.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+
+            figure(style="text-align:center;")
+              img(src="img/app-screen.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+
+        section
+          .grid(columns="2")
+            figure(style="text-align:center;")
+              img(src="img/party-splash.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+            figure(style="text-align:center;")
+              img(src="img/party-focus.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+
+        section
+          img(src="img/app-switch.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
 
       section
-        section(data-background="img/bg/ie.png")
+        section
+          h2 TESTING
 
-        section(data-background="img/bg/caniuse-grid-2019-08-20.png")
+        section
+          figure
+            img(src="img/lighthouse-1024x1024.png" style="max-height:55vh;")
+            figcaption
+              a(href="https://web.dev/measure/" target="_blank") web.dev/measure
 
-        section(data-background="img/bg/caniuse-grid2-2019-08-20.png")
+        section
+          figure
+            img(src="img/lighthouse-before.png")
+
+        section
+          figure
+            img(src="img/lighthouse-after.png")
+
+      section
+        section
+          a(href="https://damn.dog" target="_blank")
+            img(src="img/damn-og-wide.png")
+
+        section
+          code service-worker.js
+          pre(style="font-size:1.5rem;")
+            code.js(style="max-height:55vh;").
+              const cacheName = 'v2.17';
+              const offlineUrl = '/offline.html';
+              const offlineFiles = [
+                '/index.html',
+                '/offline.html',
+                '/manifest.json',
+                '/css/damn.css',
+                '/js/libraries/vue.min.js',
+                '/js/min/damn.min.js',
+                '/svg/offline-dog.svg'
+              ];
+
+              self.addEventListener('install', function(event) {
+                event.waitUntil(
+                  caches.open(cacheName).then(function(cache) {
+                    return cache.addAll(cacheName);
+                  })
+                );
+              });
+
+              // A lot of the same code goes as before goes here.
+
+        section
+          img(src="img/screenshots/damn-install-chrome.png")
+
+        section
+          img(src="img/screenshots/damn-self-app.png")
+
+        section
+          img(src="img/screenshots/damn-offline-full.png")
+
+        section
+          img(src="img/logos/winstore.jpg")
+        
+        section(data-background="img/screenshots/damn-winstore.png")
+          //img(src="img/screenshots/damn-winstore.png")
+
+        section(data-background-video="video/fancy-omar.mp4" data-background-video-loop="loop" data-background-size="contain")
+          //h3.shadowed Let's get even fancier
+          figure
+            img(src="img/fancier.png" style="max-width:600px;")
+
+        section
+          img(src="img/screenshots/damn-sidebar-open.png")
+
+        section
+          img(src="img/screenshots/damn-sidebar-circled.png")
+
+        section
+          p The Notification API
+
+        section
+          code serviceworker.js
+          pre(style="font-size:1.5rem;")
+            code.js(style="max-height:55vh;").
+              // After the install code...
+
+              Notification.requestPermission(result => {
+                if (result === 'granted') {
+                  //permission granted.
+                  navigator.serviceWorker.ready.then(registration => {
+                    registration.showNotification(
+                      'Damn Dog has been updated!', {
+                      icon: '/android-chrome-96x96.png',
+                      //vibrate: [500, 100, 500],
+                      body: '7 new rounds have been added to damn.dog,
+                             bringing the total up to 358.',
+                      tag: 'game-updated'
+                    });
+                  });
+                }
+              });
+
+        section
+          figure
+            img(src="img/pwa-notification.png")
+
+        section
+          figure
+            img(src="img/screenshots/producthunt.gif")
 
         section
           p 
-            b Takeaways:
-          ul
-            li IE 10 & 11 (US 2.1%) has  
-              i some
-              |  support (needs prefix & testing)
-            li No support in IE 9- (US 0.6%)
-            li All other lackings in browsers 1+ years behind on updates
+            strong Q: 
+            | How do I push to users not currently on the website?
 
-        section(data-background="img/bg/caniuse-flex.png")
-
-        section(data-background="img/bg/caniuse-flex2.png")
-
-      include partials/_flex.pug
-
-      include partials/_cascade.pug
-
-      include partials/_games.pug
+          .fragment
+            p 
+              strong A: 
+              | The same way you'd handle any other kind of push subscription
+            ul
+              li Firebase
+              li Twilio
+              li OneSignal
+              li etc.
 
       section
+        section
+          h3 Where do you go from here?
+
+        section(data-background="img/gif/cooking.gif")
+          h2.shadowed(style="margin-top:30vh") Get cooking!
+
+        section
+          figure
+            a(href="https://www.pwabuilder.com/" target="_blank")
+              img(src="img/logos/pwa-builder.png" style="margin-bottom:3em;")
+            figcaption
+              | by Microsoft
+
+        section
+          figure
+            a(href="https://serviceworke.rs" target="_blank")
+              img(src="img/logos/mozilla-serviceworkrs.svg")
         
         section
-          img(src="img/gif/css_family-guy.gif")
+          figure
+            a(href="https://web.dev/pwa" target="_blank")
+              img(src="img/logos/webdev.svg" style="margin-bottom:3em;")
+            figcaption
+              by by Google
+
         section
-          video(src="video/css_bottles.mp4" style="height:65vh" autoplay loop)
+          figure
+            h2
+              a(href="https://whatpwacando.today/" target="_blank") What PWA Can
+                br
+                | Do Today
+            figcaption by Danny Moerkerke
+
         section
-          video(src="video/css_dock.mp4" style="width:100%" autoplay loop)
+          figure
+            h2
+              a(href="https://pwafire.org/" target="_blank") PWA Fire
+            figcaption by Maye Edwin & Marta Wiśniewska
+              
+      section
         section
-          video(src="video/css_rock.mp4" autoplay loop)
+          figure
+            a(href="https://serviceworkies.com" target="_blank")
+              img(src="img/logos/serviceworkies.png")
+            figcaption by Dave Geddes
+
+      section
         section
-          video(src="video/css_rollers.mp4" style="height:65vh" autoplay loop)
-          p
-            | CSS GIFs by 
-            a(href="https://twitter.com/lynnandtonic" target="_blank") Lynn Fisher
+          p When thinking of
+          h2 Progressive Web Apps
+          .fragment
+            h2 ^^^^^^^^^^ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;
+
+      section
+        section(data-background="img/bg/mpls-1.jpg")
+
+        section(data-background="img/bg/mpls-fire.jpg")
+
+        section(data-background="img/bg/floyd-memorial.jpg")
       
       // THANK YOU
       section

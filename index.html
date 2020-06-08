@@ -26,8 +26,8 @@
         <!-- Little Big Uno-->
           <section data-background-iframe="https://www.youtube.com/embed/CkIhFpdJcPM?start=65&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;autohide=1&amp;showinfo=0&amp;disablekb=1" data-background-interactive>
             <h2 class="shadowed">Progressive Web Apps!<sup>*</sup></h2>
-            <div class="a-talk-by" style="margin-top:35.5vh;"><b class="white shadowed">(a talk by @AhoyLemon)</b><br>
-              <!--sub(style="font-size:26px; line-height:50%") * The talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long-->
+            <div class="a-talk-by" style="margin-top:25.5vh;"><b class="white shadowed">(a talk by @AhoyLemon)</b><br><br>
+              <div class="shadowed" style="font-size:26px; line-height:120%">* This talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long</div>
             </div>
           </section>
       </section>
@@ -168,6 +168,22 @@
         </section>
         <section><img src="svg/pwa.svg"></section>
         <section>
+          <p>A spec written by...</p>
+          <div class="grid" columns="3" style="margin-bottom:2em;">
+            <figure><img src="img/logos/chrome.png" style="max-height:20vh;"></figure>
+            <figure><img src="img/logos/firefox.png" style="max-height:20vh;"></figure>
+            <figure><img src="img/logos/edge.png" style="max-height:20vh;"></figure>
+          </div>
+          <div class="fragment">
+            <p>Supported by</p>
+            <div class="grid" columns="3">
+              <figure><img src="img/logos/safari.png" style="max-height:20vh;"></figure>
+              <figure><img src="img/logos/brave.png" style="max-height:20vh;"></figure>
+              <figure><img src="img/logos/opera.png" style="max-height:20vh;"></figure>
+            </div>
+          </div>
+        </section>
+        <section>
           <p>What is a PWA?</p>
           <p class="fragment">Potentially a lot of things.</p>
         </section>
@@ -176,600 +192,460 @@
           <ul>
             <li>installable</li>
             <li>works offline</li>
-            <li>evergreen updates</li>
-            <li>push notifications</li>
+            <li>notifications</li>
             <li>managed caching</li>
             <li>runs chromeless</li>
             <li>native sharing</li>
+            <li>wake control</li>
+            <li>multitouch</li>
+            <li>bluetooth</li>
           </ul>
         </section>
         <section data-background="gif/gnome-fascinating.gif"></section>
-        <section><img src="svg/logos/css-3.svg"></section>
         <section>
-          <h1>CSS is easy<span class="fragment">
-               ?<br>No.</span></h1>
-        </section>
-        <section>
-          <h1 class="strobe">CSS IS GREAT</h1>
-        </section>
-        <section><img src="img/gif/css_family-guy.gif">
-          <aside class="notes" data-markdown>
-            If you type **CSS** into Google Image Search
-            
-            
-          </aside>
-        </section>
-        <section>
-          <video src="video/css_blocks.mp4" autoplay loop></video>
-          <aside class="notes" data-markdown>
-            More like this
-            
-          </aside>
-        </section>
-      </section>
-      <section>
-        <h3>Today's agenda:</h3>
-        <ol>
-          <li>Things that are weird</li>
-          <li>Things that are great</li>
-          <li>Things you can try now</li>
-        </ol>
-      </section>
-      <section>
-        <section data-background="img/gif/focus.gif">
-          <h3 class="shadowed">Let's get weird!</h3>
-        </section>
-      </section>
-      <section>
-        <section>
-          <h1><code>overflow</code></h1>
-          <aside class="notes" data-markdown>
-            First difficult thing. It makes this famous image....
-            
-          </aside>
-        </section>
-        <section>
-          <figure><img src="img/css-awesome-mug.png"></figure>
-          <aside class="notes" data-markdown>
-            **overflow** is how you get this famous image
-            
-          </aside>
-        </section>
-        <section><code>CSS</code>
-          <pre><code class="css" style="font-size:2.85vw">.box { 
-  border:0.1em solid white; 
-  width: 4em;
-  padding:0.3em;
-}
-</code></pre>
-        </section>
-        <section><code>HTML</code>
-          <pre><code class="html"><div class="box">
-  CSS IS AWESOME
-</div>
-</code></pre>
-        </section>
-        <section>
-          <div id="box-1">CSS IS AWESOME</div>
-          <style>
-            #box-1 { font-size:9vh; font-weight:bold; border:0.1em solid white; width:4em; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em;
-              margin-left:auto; margin-right:auto;
-              }
-          </style>
-          <aside class="notes" data-markdown>
-            ## Let's solve this one way!!!
-            
-          </aside>
-        </section>
-        <section>
-          <pre style="font-size:3vw;"><code class="css">overflow:hidden;
-</code></pre>
-        </section>
-        <section>
-          <div id="box-3">CSS IS AWESOME</div>
-          <style>
-            #box-3 { font-size:9vh; font-weight:bold; border:0.1em solid white; width:4em; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em; margin-left:auto; margin-right:auto;
-              overflow:hidden;
-            }
-            
-          </style>
-        </section>
-        <section>
-          <pre style="font-size:3vw;"><code class="css">overflow-y:hidden;
-</code></pre>
-        </section>
-        <section>
-          <div id="box-5" title="CSS IS AWESOME">CSS IS AWESOME</div>
-          <style>
-            #box-5 { font-size:9vh; font-weight:bold; border:0.1em solid white; width:4em; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em; margin-left:auto; margin-right:auto;
-              overflow-y:hidden;
-            }
-            
-          </style>
-        </section>
-        <section>
-          <pre style="font-size:3vw;"><code class="css">word-break:break-word;
-</code></pre>
-        </section>
-        <section>
-          <div id="box-2">CSS IS AWESOME</div>
-          <style>
-            #box-2 { font-size:9vh; font-weight:bold; border:0.1em solid white; width:4em; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em;
-              word-break:break-word; margin-left:auto; margin-right:auto;
-            }
-            
-          </style>
-        </section>
-        <section>
-          <pre style="font-size:3vw;"><code class="css">text-overflow:ellipsis;
-</code></pre>
-        </section>
-        <section>
-          <div id="box-4" title="CSS IS AWESOME">CSS IS AWESOME</div>
-          <style>
-            #box-4 { font-size:9vh; font-weight:bold; border:0.1em solid white; width:4em; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em; margin-left:auto; margin-right:auto;
-              overflow:hidden; text-overflow:ellipsis;
-            }
-            
-          </style>
-        </section>
-        <section><code>CSS</code>
-          <pre><code class="css" style="font-size:2.85vw">.box { 
-  border:0.1em solid white; 
-  width: 4em;
-  padding:0.3em;
-}
-</code></pre>
-        </section>
-        <section>
-          <div id="box-1">CSS IS AWESOME</div>
-          <style>
-            #box-1 { font-size:9vh; font-weight:bold; border:0.1em solid white; width:4em; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em;
-              margin-left:auto; margin-right:auto;
-              }
-            
-          </style>
-        </section>
-        <section>
-          <s>width: 4em;</s>
-        </section>
-        <section>
-          <div id="box-6" title="CSS IS AWESOME">CSS IS AWESOME</div>
-          <style>
-            #box-6 { font-size:8.5vh; font-weight:bold; border:0.1em solid white; text-align:left; padding:0.3em; box-sizing:border-box; letter-spacing:0.1em; display:inline-block; }
-            
-          </style>
-        </section>
-        <section><sub><strong>Original idea: </strong><span> <a href="https://css-tricks.com/author/brundolf/" target="_blank">Brandon Smith</a>'s blog post on <a href="https://css-tricks.com/css-is-awesome/" target="_blank">CSS Tricks</a>. </span></sub></section>
-      </section>
-      <section>
-        <section>
-          <h1><code>position</code></h1>
-        </section>
-        <section>
-          <pre style="font-size:3vw;">position: relative
-          absolute
-          fixed
-          sticky</pre>
-          <pre class="fragment" style="font-size:3vw; font-weight:bold; color:yellow;">&nbsp;         static</pre>
-          <aside class="notes" data-markdown>
-            **QUIZ**: Which of these is the default value?
-            
-          </aside>
-        </section>
-        <section>
-          <h4><code>postion:absolute</code></h4>
-          <iframe data-src="examples/absolute.html" data-preload="false" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-        <section>
-          <h4><code>postion:fixed</code></h4>
-          <iframe data-src="examples/fixed.html" data-preload="false" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-        <section>
-          <h4><code>postion:sticky</code></h4>
-          <iframe data-src="examples/sticky.html" data-preload="false" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-        <section>
-          <h4><code>postion:relative</code></h4>
-          <iframe data-src="examples/relative.html" data-preload="false" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-        <section>
-          <h4><code>postion:static</code></h4>
-          <iframe data-src="examples/static.html" data-preload="false" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-        <section>
-          <h4>all five</h4>
-          <iframe data-src="examples/all-5.html" data-preload="false" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-        <section>
-          <dl style="width:100%;">
-            <dt>fixed</dt>
-            <dd>stapled to a fixed position on your screen</dd>
-          </dl>
-          <dl style="width:100%;">
-            <dt>absolute</dt>
-            <dd>stapled to a position in the nearest restictive parent</dd>
-          </dl>
-          <dl style="width:100%;">
-            <dt>sticky</dt>
-            <dd><i>NEW(ish)!</i> Toggles between <b>relative</b> and <b>fixed</b>, depending.</dd>
-          </dl>
-          <dl style="width:100%;">
-            <dt>relative</dt>
-            <dd>Follows page flow & provides a restrictive parent</dd>
-          </dl>
-          <dl style="width:100%;">
-            <dt>static</dt>
-            <dd>same as relative, but less helpful</dd>
-          </dl>
-        </section>
-        <section>
-          <table>
-            <thead>
-              <tr>
-                <th> </th>
-                <th>relative</th>
-                <th>static</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>z-index</td>
-                <td>✔️</td>
-                <td>🚫</td>
-              </tr>
-              <tr>
-                <td>top, bottom, left, right</td>
-                <td>✔️</td>
-                <td>🚫</td>
-              </tr>
-              <tr>
-                <td>holds absolute</td>
-                <td>✔️</td>
-                <td>🚫</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <section>
-          <h3>Okay, so why does <span style="font-family:monospace;">position:static</span> exist?</h3>
-        </section>
-        <section>
-          <pre><code class="css">* { position:relative; }
-</code></pre>
-        </section>
-        <section><span>My CodePen article on the subject: <a href="https://codepen.io/ahoylemon/post/z-index-is-weird">Z-Index Is Weird</a></span></section>
-      </section>
-      <section>
-        <section>
-          <h1><code>float</code></h1>
-        </section>
-        <section data-background="img/gif/witch.gif">
-          <h1><code class="shadowed">float</code></h1>
-        </section>
-        <section>
-          <h4>when float works</h4>
-          <iframe data-src="examples/float-good.html" data-preload="false" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-        <section>
-          <h4>when float doesn't work</h4>
-          <iframe data-src="examples/float-bad.html" data-preload="false" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-          <h3 style="margin-top:-24vh; padding-left:4em"> <span class="black fragment">WHY!!!???</span></h3>
-        </section>
-        <section>
-          <h3>Can you fix it?</h3>
-          <p class="fragment">Of course.</p>
-        </section>
-        <section>
-          <pre><code class="css">.container:after { 
-  content: "";
-  display: table;
-  clear: both;
-}
-</code></pre>
-        </section>
-        <section>
-          <h4>when float is fixed</h4>
-          <iframe data-src="examples/float-fixed.html" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-          <h4 style="margin-top:-24vh; padding-left:5em;"> <span class="black fragment">Why does this work?</span></h4>
-        </section>
-        <section>
-          <h3>Okay, so let's make a layout with floats!</h3>
-        </section>
-        <section>
-          <iframe data-src="examples/float-grid-perfect.html" style="width:100%; height:62vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-        <section><code>CSS</code>
-          <pre> <code class="css">.riker {
-  float: left;
-  width: calc(33% - 30px);
-  margin-left: 15px;
-  margin-right: 15px;
-}
-</code></pre>
-        </section>
-        <section>
-          <iframe data-src="examples/float-grid.html" style="width:100%; height:62vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-      </section>
-      <section>
-        <section data-background="img/bg/hope.jpg"></section>
-      </section>
-      <section>
-        <section>
-          <h1><code>grid</code></h1>
-        </section>
-        <section>
-          <h3>step 1</h3>
-          <pre class="fragment" style="font-size:2vw;"><code>.all-rikers { 
-  display:grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-gap:30px;
-}
-</code></pre>
-        </section>
-        <section>
-          <h3>step 2</h3><img class="fragment" src="img/gif/done.gif" style="width:600px; height:auto;">
-        </section>
-        <section>
-          <iframe data-src="examples/float-grid-perfect.html" style="width:100%; height:60vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-          <div class="fragment"><span class="blink">288 bytes!</span></div>
-        </section>
-        <section>
-          <pre style="font-size:2vw;"><code class="css">grid-template-columns
-</code></pre>
-        </section>
-        <section>
-          <pre style="font-size:2vw;">grid-template-columns: 1fr 1fr 1fr;
-                       repeat(3, 1fr);
-                       260px 50% 1fr;
-                       repeat(auto-fill,260px);
-                       repeat(auto-fit, minmax(160px,1fr))
-</pre>
-        </section>
-        <section>
-          <pre>1fr = 1 fraction
-</pre>
-        </section>
-        <section>
-          <h3>My gin and tonic:</h3>
+          <p>What do you need?</p>
           <ol>
-            <li>4 ice cubes</li>
-            <li>1 jigger of gin</li>
-            <li>tonic water</li>
-            <li>1 lime wheel</li>
+            <li> <strong>HTTPS connection</strong></li>
+            <li> <code>manifest.json</code></li>
+            <li><code>service-worker.js</code></li>
           </ol>
         </section>
         <section>
+          <p>Where can I get a HTTPS certificate?</p>
+          <p> <i>PS: For free?</i></p>
+          <ul>
+            <li>GitHub Pages</li>
+            <li>Let's Encrypt</li>
+            <li>Cloudflare</li>
+            <li>Many cPanel-based hosting platforms<br><sub>(personal rec's: Green Geeks & InMotion)</sub></li>
+          </ul>
+        </section>
+        <section>
+          <p>Regardless: get a cert, turn it on, and direct <i>all</i> HTTP traffic to HTTPS.</p>
+        </section>
+        <section><code>manifest.json</code>
+          <p>A json file located in the root of your project, which will define some values...</p>
+          <ul>
+            <li>Name & Description</li>
+            <li>Color Scheme</li>
+            <li>Languages</li>
+            <li>Orientation</li>
+            <li>URL scope</li>
+            <li>Icons</li>
+          </ul>
+          <!--pre(style="font-size:1.5rem;")
+          code.json(style="max-height:55vh;").
+            {
+              "manifest_version": 2.01,
+              "name": "damn dog",
+              "short_name": "damndog",
+              "description": "A guessing game for wikiHow illustrations.",
+              "default_locale": "en",
+              "display": "standalone",
+              "scope": "/",
+              "start_url": "/",
+              "theme_color": "#222730",
+              "background_color": "#222730",
+              "icons": [
+                {
+                  "src": "/android-chrome-36x36.png",
+                  "sizes": "36x36",
+                  "type": "image/png"
+                },
+                {
+                  "src": "/android-chrome-48x48.png",
+                  "sizes": "48x48",
+                  "type": "image/png"
+                },
+                {
+                  "src": "/android-chrome-72x72.png",
+                  "sizes": "72x72",
+                  "type": "image/png"
+                },
+                {
+                  "src": "/android-chrome-96x96.png",
+                  "sizes": "96x96",
+                  "type": "image/png"
+                },
+                {
+                  "src": "/android-chrome-144x144.png",
+                  "sizes": "144x144",
+                  "type": "image/png"
+                },
+                {
+                  "src": "/android-chrome-192x192.png",
+                  "sizes": "192x192",
+                  "type": "image/png"
+                },
+                {
+                  "src": "/android-chrome-256x256.png",
+                  "sizes": "256x256",
+                  "type": "image/png"
+                },
+                {
+                  "src": "/android-chrome-384x384.png",
+                  "sizes": "384x384",
+                  "type": "image/png"
+                },
+                {
+                  "src": "/android-chrome-512x512.png",
+                  "sizes": "512x512",
+                  "type": "image/png"
+                }
+              ]
+            }
+          
+          -->
+        </section>
+        <section><code>service-worker.js</code>
+          <p>A single javascript file (can be called anything), which will set up functions for installation, caching, permissions, and features.</p>
+          <!--pre(style="font-size:1.5rem;")
+          code.js(style="max-height:55vh;").
+          
+            self.addEventListener('install', e => {
+              // once the SW is installed, go ahead and fetch the resources
+              // to make this work offline
+              e.waitUntil(
+                caches.open(cacheName).then(cache => {
+                  return cache.addAll([
+                    '/index.html',
+                    // Put critical files here.
+                  ]).then(() => self.skipWaiting());
+                })
+              );
+            });
+          
+          -->
+        </section>
+        <section>
+          <p>Reference both these files in your index.html</p>
+        </section>
+      </section>
+      <section>
+        <section>
+          <div><img src="img/before-sw.png"></div>
+          <div class="fragment"><img src="img/after-sw.png"></div>
+        </section>
+        <section>
+          <p>The service worker gets its own lifecycle.</p>
+        </section>
+        <section><code>cachebusting...</code>
+          <pre style="font-size:1.5rem;"><code class="html" style="max-height:55vh;">&lt;script src=&quot;site.min.js?updated=xwJEKgJfizi&quot;&gt;&lt;script&gt;
+</code></pre>
+        </section>
+      </section>
+      <section>
+        <h2>Now, let's see some <span class="strobe">real-world examples</span></h2>
+      </section>
+      <section>
+        <section>
+          <figure><a href="https://partypartypartyparty.party" target="_blank"><img src="img/party-square.png" style="max-height:50vh;">
+              <figcaption>partypartypartyparty.party</figcaption></a></figure>
+        </section>
+        <section>
+          <blockquote>
+            <p>I need to be able to party efficiently when I don't have internet.</p>
+            <cite>a friend</cite>
+          </blockquote>
+          <blockquote class="fragment">
+            <p>That's an excellent point!</p>
+            <cite>me</cite>
+          </blockquote>
+        </section>
+        <section><code>service-worker.js</code>
+          <pre style="font-size:1.5rem;"><code class="js" style="max-height:55vh;">const offlineUrl = '/index.html';
+const offlineFiles = [
+  '/index.html',
+  '/manifest.json',
+  '/css/party.css',
+  '/js/min/jquery.min.js',
+  '/js/min/howler.min.js',
+  '/js/min/party.min.js',
+  '/audio/party.mp3',
+  '/audio/venga.mp3'
+];
+
+/*****
+On install, the service worker will take all our
+required files, and store those locally. */
+self.addEventListener('install', function(event) {
+  var offlineRequest = new Request(offlineFiles);
+  event.waitUntil(
+    fetch(offlineRequest).then(function(response) {
+      return caches.open('offline').then(function(cache) {
+        return cache.put(offlineRequest, response);
+      });
+    })
+  );
+});
+
+/************
+Then, on a fetch request, the service worker 
+will check for response.
+If everything seems to be offline, serve the
+offline files instead.  */
+self.addEventListener('fetch', function(event) {
+  var request = event.request;
+  if (request.method === 'GET') {
+    event.respondWith(
+      fetch(request).catch(function(error) {
+        console.error(
+          '[onfetch] Failed. Serving cached offline fallback ' +
+          error
+        );
+        return caches.open('offline').then(function(cache) {
+          return cache.match(offlineUrl);
+        });
+      })
+    );
+  }
+});
+</code></pre>
+        </section>
+        <section><code>manifest.json</code>
+          <pre style="font-size:1.5rem;"><code class="json" style="max-height:55vh;">{
+  "manifest_version": 2,
+  "name": "PARTY PARTY PARTY PARTY PARTY",
+  "short_name": "PARTY",
+  "description": "PARTY PARTY PARTY PARTY PARTY PARTY PART PARTY PARTY PARTY PARTY PARTY PARTY",
+  "default_locale": "en",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "theme_color": "#d1d1d1",
+  "background_color": "#d1d1d1",
+  "icons": [
+    {
+      "src": "/icon-36x36.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+</code></pre>
+        </section>
+        <section><code>index.html</code>
+          <pre style="font-size:1.5rem;"><code class="js" style="max-height:55vh;">// Register the service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+    // Registration was successful
+    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+  }).catch(function(err) {
+    // registration failed :(
+    console.log('ServiceWorker registration failed: ', err);
+  });
+}
+</code></pre>
+        </section>
+        <section>
+          <figure style="text-align:center;"><img src="img/party-install-prompt.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"></figure>
+        </section>
+        <section>
           <div class="grid" columns="2">
-            <div class="box"><img src="img/g-t-short.jpg"></div>
-            <div class="box"><img src="img/g-t-tall.jpg"></div>
+            <figure style="text-align:center;"><img src="img/home-screen.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"></figure>
+            <figure style="text-align:center;"><img src="img/app-screen.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"></figure>
           </div>
         </section>
         <section>
-          <pre style="font-size:2vw;">grid-template-columns: 1fr 1fr;</pre>
-          <div class="fragment">
-            <iframe data-src="examples/grids/repeat-2-1fr.html" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
+          <div class="grid" columns="2">
+            <figure style="text-align:center;"><img src="img/party-splash.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"></figure>
+            <figure style="text-align:center;"><img src="img/party-focus.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"></figure>
           </div>
         </section>
+        <section><img src="img/app-switch.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"></section>
+      </section>
+      <section>
         <section>
-          <pre style="font-size:2vw;">grid-template-columns: repeat(4,1fr);</pre>
-          <div class="fragment">
-            <iframe data-src="examples/grids/repeat-4-1fr.html" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-          </div>
+          <h2>TESTING</h2>
         </section>
         <section>
-          <pre style="font-size:2vw;">grid-template-columns:200px 1fr 1fr;</pre>
-          <div class="fragment">
-            <iframe data-src="examples/grids/3.html" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-          </div>
+          <figure><img src="img/lighthouse-1024x1024.png" style="max-height:55vh;">
+            <figcaption><a href="https://web.dev/measure/" target="_blank">web.dev/measure</a></figcaption>
+          </figure>
         </section>
         <section>
-          <pre style="font-size:2vw;">grid-template-columns:repeat(auto-fill,240px);</pre>
-          <div class="fragment">
-            <iframe data-src="examples/grids/4.html" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-          </div>
+          <figure><img src="img/lighthouse-before.png"></figure>
         </section>
         <section>
-          <pre style="font-size:2vw;">repeat( auto-fill, minmax(250px, 1fr) );</pre>
-          <div class="fragment">
-            <iframe data-src="examples/grids/5.html" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-          </div>
-          <div class="fragment">
-            <div class="outside-link"><a href="examples/grids/5.html" target="_blank">open in new window</a></div>
-          </div>
+          <figure><img src="img/lighthouse-after.png"></figure>
+        </section>
+      </section>
+      <section>
+        <section><a href="https://damn.dog" target="_blank"><img src="img/damn-og-wide.png"></a></section>
+        <section><code>service-worker.js</code>
+          <pre style="font-size:1.5rem;"><code class="js" style="max-height:55vh;">const cacheName = 'v2.17';
+const offlineUrl = '/offline.html';
+const offlineFiles = [
+  '/index.html',
+  '/offline.html',
+  '/manifest.json',
+  '/css/damn.css',
+  '/js/libraries/vue.min.js',
+  '/js/min/damn.min.js',
+  '/svg/offline-dog.svg'
+];
+
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      return cache.addAll(cacheName);
+    })
+  );
+});
+
+// A lot of the same code goes as before goes here.
+</code></pre>
+        </section>
+        <section><img src="img/screenshots/damn-install-chrome.png"></section>
+        <section><img src="img/screenshots/damn-self-app.png"></section>
+        <section><img src="img/screenshots/damn-offline-full.png"></section>
+        <section><img src="img/logos/winstore.jpg"></section>
+        <section data-background="img/screenshots/damn-winstore.png">
+          <!--img(src="img/screenshots/damn-winstore.png")-->
         </section>
         <section data-background-video="video/fancy-omar.mp4" data-background-video-loop="loop" data-background-size="contain">
           <!--h3.shadowed Let's get even fancier-->
           <figure><img src="img/fancier.png" style="max-width:600px;"></figure>
         </section>
+        <section><img src="img/screenshots/damn-sidebar-open.png"></section>
+        <section><img src="img/screenshots/damn-sidebar-circled.png"></section>
         <section>
-          <pre style="font-size:1.8vw;"><code class="css">.grid { 
-  grid-template-columns: repeat(4,1fr);
-}
+          <p>The Notification API</p>
+        </section>
+        <section><code>serviceworker.js</code>
+          <pre style="font-size:1.5rem;"><code class="js" style="max-height:55vh;">// After the install code...
 
-.mojito, .daiquiri, .pina-colada {
-  grid-column: span 2;
-  grid-row: span 2;
-}
+Notification.requestPermission(result => {
+  if (result === 'granted') {
+    //permission granted.
+    navigator.serviceWorker.ready.then(registration => {
+      registration.showNotification(
+        'Damn Dog has been updated!', {
+        icon: '/android-chrome-96x96.png',
+        //vibrate: [500, 100, 500],
+        body: '7 new rounds have been added to damn.dog,
+               bringing the total up to 358.',
+        tag: 'game-updated'
+      });
+    });
+  }
+});
 </code></pre>
         </section>
         <section>
-          <iframe data-src="examples/grids/6.html" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
+          <figure><img src="img/pwa-notification.png"></figure>
         </section>
         <section>
-          <pre style="font-size:1.6vw;">HTML<code class="html"><figure class="tulip pina-colada">...</figure>
-<figure class="collins screwdriver">...</figure>
-<figure class="martini mojito">...</figure>
-<figure class="collins cuba-libre">...</figure>
-<figure class="tulip tequila-sunrise">...</figure>
-<figure class="tulip sex-on-the-beach">...</figure>
-<figure class="martini daiquiri">...</figure>
-<figure class="martini manhattan">...</figure>
-<figure class="collins bloody-mary">...</figure>
-<figure class="collins long-island">...</figure>
-<figure class="martini porto-flip">...</figure>
-<figure class="margarita">...</figure>
-</code></pre>
+          <figure><img src="img/screenshots/producthunt.gif"></figure>
         </section>
         <section>
-          <iframe data-src="examples/grids/7-before.html" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-        <section>
-          <pre style="font-size:2vw;">css<code class="css">.collins   { order: 1; }
-.martini   { order: 2; }
-.tulip     { order: 3; }
-.margarita { order: 4; }
-</code></pre>
-        </section>
-        <section>
-          <iframe data-src="examples/grids/7.html" style="width:100%; height:50vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-      </section>
-      <section>
-        <section data-background="img/bg/ie.png"></section>
-        <section data-background="img/bg/caniuse-grid-2019-08-20.png"></section>
-        <section data-background="img/bg/caniuse-grid2-2019-08-20.png"></section>
-        <section>
-          <p> <b>Takeaways:</b></p>
-          <ul>
-            <li>IE 10 & 11 (US 2.1%) has  <i>some</i> support (needs prefix & testing)</li>
-            <li>No support in IE 9- (US 0.6%)</li>
-            <li>All other lackings in browsers 1+ years behind on updates</li>
-          </ul>
-        </section>
-        <section data-background="img/bg/caniuse-flex.png"></section>
-        <section data-background="img/bg/caniuse-flex2.png"></section>
-      </section>
-      <section>
-        <section>
-          <h1><code>flex</code></h1>
-        </section>
-        <section>
-          <iframe data-src="examples/riker-grid-flex.html" style="width:100%; height:60vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-        <section>
-          <pre style="font-size:2vw;"><code class="css">.flex-container { 
-  display: flex;
-  flex-wrap:wrap;
-  justify-content: space-between;
-}
-.flexbox { 
-  flex-basis:calc(33% - 15px);
-  flex-grow: 0;
-  flex-shrink:1;
-  margin-bottom:30px;
-}
-</code></pre>
-        </section>
-        <section>
-          <p>Flex can be used <i>with</i> or <i>instead of</i> CSS grid</p>
-        </section>
-        <section>
-          <pre style="font-size:2vw;"><code class="css">.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-</code></pre>
-        </section>
-        <section>
-          <iframe data-src="examples/flex-flexible.html" style="width:100%; height:60vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-        <section>
-          <p>Vertical Centering with Flex!</p>
-        </section>
-        <section>
-          <pre style="font-size:2vw;"><code class="css">.flex-container {
-  display: flex;
-  align-items: center;
-  /* ^- vertical */
-  justify-content: center;
-  /* ^- horizontal */
-}
-</code></pre>
-        </section>
-        <section>
-          <iframe data-src="examples/flex-center.html" style="width:100%; height:60vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-        </section>
-      </section>
-      <section>
-        <section><img src="img/9-css-in-js.png"></section>
-        <section data-background="img/bg/9-css-in-js.png"></section>
-        <section data-background-video="video/cascade.mp4" data-autoplay data-background-video-loop="loop" data-background-video-muted="muted" autoplay>
-          <h1 class="shadowed">The Cascade</h1>
-        </section>
-        <section><b>The Cascade:</b>
-          <ol>
-            <li>individual rules</li>
-            <li>calculated in order</li>
-            <li>of increasing specificity</li>
-            <li>with id's getting extreme priority</li>
-            <li>only beat by inline styles</li>
-            <li>and <code style="color:red">!important</code> being the nuclear option</li>
-          </ol>
-        </section>
-        <section><code>HTML</code>
-          <pre style="font-size:2vw;"><code class="HTML"><article>
-  <p class="p-one" id="MyParagraph"></p>
-  <a href="page.html" class="link"></a>
-</article></code></pre>
-          <div class="fragment"><code>CSS</code>
-            <pre style="font-size:2vw;"><code class="css">article p { background: orange; }
-#MyParagraph { color:red; }
-p { background: green; }
-a.link { background:blue; }
-a[href] { color:yellow; }
-a { background:green; }
-</code></pre>
+          <p> <strong>Q: </strong>How do I push to users not currently on the website?</p>
+          <div class="fragment">
+            <p> <strong>A: </strong>The same way you'd handle any other kind of push subscription</p>
+            <ul>
+              <li>Firebase</li>
+              <li>Twilio</li>
+              <li>OneSignal</li>
+              <li>etc.</li>
+            </ul>
           </div>
         </section>
+      </section>
+      <section>
         <section>
-          <iframe data-src="examples/cascade.html" style="width:100%; height:55vh; box-shadow:5px 5px 5px rgba(0,0,0,0.5)"></iframe>
-          <div class="outside-link"><a href="examples/cascade.html" target="_blank">open in new window</a></div>
+          <h3>Where do you go from here?</h3>
+        </section>
+        <section data-background="img/gif/cooking.gif">
+          <h2 class="shadowed" style="margin-top:30vh">Get cooking!</h2>
+        </section>
+        <section>
+          <figure><a href="https://www.pwabuilder.com/" target="_blank"><img src="img/logos/pwa-builder.png" style="margin-bottom:3em;"></a>
+            <figcaption>by Microsoft</figcaption>
+          </figure>
+        </section>
+        <section>
+          <figure><a href="https://serviceworke.rs" target="_blank"><img src="img/logos/mozilla-serviceworkrs.svg"></a></figure>
+        </section>
+        <section>
+          <figure><a href="https://web.dev/pwa" target="_blank"><img src="img/logos/webdev.svg" style="margin-bottom:3em;"></a>
+            <figcaption>
+              <by>by Google</by>
+            </figcaption>
+          </figure>
+        </section>
+        <section>
+          <figure>
+            <h2><a href="https://whatpwacando.today/" target="_blank">What PWA Can<br>Do Today</a></h2>
+            <figcaption>by Danny Moerkerke</figcaption>
+          </figure>
+        </section>
+        <section>
+          <figure>
+            <h2><a href="https://pwafire.org/" target="_blank">PWA Fire</a></h2>
+            <figcaption>by Maye Edwin & Marta Wiśniewska</figcaption>
+          </figure>
         </section>
       </section>
       <section>
         <section>
-          <figure>
-            <h2><a href="https://flukeout.github.io/" target="_blank">CSS Diner</a></h2><a href="https://flukeout.github.io/" target="_blank"><img src="img/screenshots/css-diner.jpg"></a>
-            <p>by flukeout</p>
+          <figure><a href="https://serviceworkies.com" target="_blank"><img src="img/logos/serviceworkies.png"></a>
+            <figcaption>by Dave Geddes</figcaption>
           </figure>
-        </section>
-        <section>
-          <figure>
-            <h2><a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a></h2><a href="https://flexboxfroggy.com/" target="_blank"><img src="img/screenshots/flexbox-froggy.png"></a>
-          </figure>
-          <p>by Thomas H. Park</p>
-        </section>
-        <section>
-          <figure>
-            <h2><a href="https://cssgridgarden.com/" target="_blank">Grid Garden</a></h2><a href="https://cssgridgarden.com/" target="_blank"><img src="img/screenshots/cssgrid-garden.png"></a>
-          </figure>
-          <p>by Thomas H. Park</p>
-        </section>
-        <section>
-          <figure><a href="https://codepen.io/search/pens?q=css%20only" target="_blank"><img src="img/codepen.png"></a></figure>
-        </section>
-        <section>
-          <figure><a href="https://cssbattle.dev" target="_blank"><img src="img/css-battle.png"></a></figure>
         </section>
       </section>
       <section>
-        <section><img src="img/gif/css_family-guy.gif"></section>
         <section>
-          <video src="video/css_bottles.mp4" style="height:65vh" autoplay loop></video>
+          <p>When thinking of</p>
+          <h2>Progressive Web Apps</h2>
+          <div class="fragment">
+            <h2>^^^^^^^^^^ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;</h2>
+          </div>
         </section>
-        <section>
-          <video src="video/css_dock.mp4" style="width:100%" autoplay loop></video>
-        </section>
-        <section>
-          <video src="video/css_rock.mp4" autoplay loop></video>
-        </section>
-        <section>
-          <video src="video/css_rollers.mp4" style="height:65vh" autoplay loop></video>
-          <p>CSS GIFs by <a href="https://twitter.com/lynnandtonic" target="_blank">Lynn Fisher</a></p>
-        </section>
+      </section>
+      <section>
+        <section data-background="img/bg/mpls-1.jpg"></section>
+        <section data-background="img/bg/mpls-fire.jpg"></section>
+        <section data-background="img/bg/floyd-memorial.jpg"></section>
       </section>
       <!-- THANK YOU-->
       <section>
