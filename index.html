@@ -55,7 +55,7 @@
             <p>I want you to build me a website!</p>
             <cite>The Client</cite>
           </blockquote>
-          <blockquote>
+          <blockquote class="fragment">
             <p>Sounds good.</p>
             <cite>me</cite>
           </blockquote>
@@ -65,7 +65,7 @@
             <p>I want you to build me a mobile app!</p>
             <cite>The Client</cite>
           </blockquote>
-          <blockquote>
+          <blockquote class="fragment">
             <p>Okay, but based on what you're trying to do, a mobile app might not be the best solution. What about a website instead?</p>
             <cite>me</cite>
           </blockquote>
@@ -75,7 +75,7 @@
             <p>I want you to build me a mobile app, and I'll pay you a <strong>lot of money </strong>to do it.</p>
             <cite>The Client</cite>
           </blockquote>
-          <blockquote>
+          <blockquote class="fragment">
             <p>Okay, let's build a mobile app.</p>
             <cite>me</cite>
           </blockquote>
@@ -84,7 +84,7 @@
           <div class="grid" columns="3">
             <figure><img src="svg/logos/cordova_256.png" style="width:100%"></figure>
             <figure></figure>
-            <figure><img src="svg/logos/phonegap.svg" style="width:100%"></figure>
+            <figure class="fragment"><img src="svg/logos/phonegap.svg" style="width:100%"></figure>
           </div>
         </section>
         <section>
@@ -93,7 +93,7 @@
             <li>Build an HTML website.</li>
             <li>Wrap it in a vendor-specific webview.</li>
             <li>Add plugins.</li>
-            <li>Release to the store.<sup>*</sup></li><i>* herein lies the problem.</i>
+            <li>Release to the store.<sup>*</sup></li><i class="fragment">* herein lies the problem.</i>
           </ol>
         </section>
         <section>
@@ -108,10 +108,14 @@
             <li>waiting</li>
           </ol>
         </section>
+        <section><img src="img/true-stories.jpg"></section>
+        <section>
+          <p>So, I built a mobile app...</p>
+        </section>
         <section>
           <blockquote><strong>From: </strong><span>Google Play Support</span><br><strong>To: </strong><span>me</span>
             <p>We have rejected your latest build from the Google Play Store, because it violates our policy on embedded YouTube videos.</p>
-            <p>Please see this link that kind of sort of describes the policy.</p>
+            <p class="fragment">Please see this webpage that has a whole lot of text, which kind of sort of describes what I'm talking about.</p>
           </blockquote>
         </section>
         <section>
@@ -128,6 +132,7 @@
         <section>
           <blockquote><strong>From: </strong><span>me</span><br><strong>To: </strong><span>Google Play Support</span>
             <p>Right... Except the app doesn't <i>have </i><span>any YouTube videos, of any sort.</span></p>
+            <p class="fragment">Please advise.</p>
           </blockquote>
         </section>
         <section>
@@ -149,6 +154,7 @@
         </section>
       </section>
       <section>
+        <section data-background="img/gif/reverse-horse.gif"></section>
         <section>
           <blockquote>
             <p>So, when you say you want a mobile app, what do you really want?</p>
@@ -199,9 +205,10 @@
             <li>wake control</li>
             <li>multitouch</li>
             <li>bluetooth</li>
+            <li>quite a bit more.</li>
           </ul>
         </section>
-        <section data-background="gif/gnome-fascinating.gif"></section>
+        <section data-background="img/gif/gnome-fascinating.gif"></section>
         <section>
           <p>What do you need?</p>
           <ol>
@@ -233,89 +240,9 @@
             <li>URL scope</li>
             <li>Icons</li>
           </ul>
-          <!--pre(style="font-size:1.5rem;")
-          code.json(style="max-height:55vh;").
-            {
-              "manifest_version": 2.01,
-              "name": "damn dog",
-              "short_name": "damndog",
-              "description": "A guessing game for wikiHow illustrations.",
-              "default_locale": "en",
-              "display": "standalone",
-              "scope": "/",
-              "start_url": "/",
-              "theme_color": "#222730",
-              "background_color": "#222730",
-              "icons": [
-                {
-                  "src": "/android-chrome-36x36.png",
-                  "sizes": "36x36",
-                  "type": "image/png"
-                },
-                {
-                  "src": "/android-chrome-48x48.png",
-                  "sizes": "48x48",
-                  "type": "image/png"
-                },
-                {
-                  "src": "/android-chrome-72x72.png",
-                  "sizes": "72x72",
-                  "type": "image/png"
-                },
-                {
-                  "src": "/android-chrome-96x96.png",
-                  "sizes": "96x96",
-                  "type": "image/png"
-                },
-                {
-                  "src": "/android-chrome-144x144.png",
-                  "sizes": "144x144",
-                  "type": "image/png"
-                },
-                {
-                  "src": "/android-chrome-192x192.png",
-                  "sizes": "192x192",
-                  "type": "image/png"
-                },
-                {
-                  "src": "/android-chrome-256x256.png",
-                  "sizes": "256x256",
-                  "type": "image/png"
-                },
-                {
-                  "src": "/android-chrome-384x384.png",
-                  "sizes": "384x384",
-                  "type": "image/png"
-                },
-                {
-                  "src": "/android-chrome-512x512.png",
-                  "sizes": "512x512",
-                  "type": "image/png"
-                }
-              ]
-            }
-          
-          -->
         </section>
         <section><code>service-worker.js</code>
           <p>A single javascript file (can be called anything), which will set up functions for installation, caching, permissions, and features.</p>
-          <!--pre(style="font-size:1.5rem;")
-          code.js(style="max-height:55vh;").
-          
-            self.addEventListener('install', e => {
-              // once the SW is installed, go ahead and fetch the resources
-              // to make this work offline
-              e.waitUntil(
-                caches.open(cacheName).then(cache => {
-                  return cache.addAll([
-                    '/index.html',
-                    // Put critical files here.
-                  ]).then(() => self.skipWaiting());
-                })
-              );
-            });
-          
-          -->
         </section>
         <section>
           <p>Reference both these files in your index.html</p>
@@ -328,10 +255,6 @@
         </section>
         <section>
           <p>The service worker gets its own lifecycle.</p>
-        </section>
-        <section><code>cachebusting...</code>
-          <pre style="font-size:1.5rem;"><code class="html" style="max-height:55vh;">&lt;script src=&quot;site.min.js?updated=xwJEKgJfizi&quot;&gt;&lt;script&gt;
-</code></pre>
         </section>
       </section>
       <section>
@@ -407,8 +330,8 @@ self.addEventListener('fetch', function(event) {
   "manifest_version": 2,
   "name": "PARTY PARTY PARTY PARTY PARTY",
   "short_name": "PARTY",
-  "description": "PARTY PARTY PARTY PARTY PARTY PARTY PART PARTY PARTY PARTY PARTY PARTY PARTY",
-  "default_locale": "en",
+  "description": "PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY",
+  "default_locale": "en-us",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
@@ -469,10 +392,8 @@ self.addEventListener('fetch', function(event) {
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
     // Registration was successful
-    console.log('ServiceWorker registration successful with scope: ', registration.scope);
   }).catch(function(err) {
     // registration failed :(
-    console.log('ServiceWorker registration failed: ', err);
   });
 }
 </code></pre>
@@ -495,9 +416,7 @@ if ('serviceWorker' in navigator) {
         <section><img src="img/app-switch.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"></section>
       </section>
       <section>
-        <section>
-          <h2>TESTING</h2>
-        </section>
+        <section data-background-video="video/testing.mp4" data-background-video-loop="loop" data-background-size="contain"></section>
         <section>
           <figure><img src="img/lighthouse-1024x1024.png" style="max-height:55vh;">
             <figcaption><a href="https://web.dev/measure/" target="_blank">web.dev/measure</a></figcaption>
@@ -508,6 +427,15 @@ if ('serviceWorker' in navigator) {
         </section>
         <section>
           <figure><img src="img/lighthouse-after.png"></figure>
+        </section>
+        <section>
+          <h3>Strategy for Feature Rollout</h3>
+          <ol>
+            <li>Test it in Lighthouse</li>
+            <li>Get it working on your machine(s)</li>
+            <li>Get it working on friends/coworkers machine(s)</li>
+            <li><i>THEN</i> try it out on strangers</li>
+          </ol>
         </section>
       </section>
       <section>
@@ -552,7 +480,7 @@ self.addEventListener('install', function(event) {
         <section>
           <p>The Notification API</p>
         </section>
-        <section><code>serviceworker.js</code>
+        <section><code>service-worker.js</code>
           <pre style="font-size:1.5rem;"><code class="js" style="max-height:55vh;">// After the install code...
 
 Notification.requestPermission(result => {

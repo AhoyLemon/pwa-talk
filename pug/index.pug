@@ -49,7 +49,7 @@ body
           blockquote
             p I want you to build me a website!
             cite The Client
-          blockquote
+          blockquote.fragment
             p Sounds good.
             cite me
 
@@ -57,7 +57,7 @@ body
           blockquote
             p I want you to build me a mobile app!
             cite The Client
-          blockquote
+          blockquote.fragment
             p Okay, but based on what you're trying to do, a mobile app might not be the best solution. What about a website instead?
             cite me
         
@@ -67,7 +67,7 @@ body
               strong lot of money 
               | to do it.
             cite The Client
-          blockquote
+          blockquote.fragment
             p Okay, let's build a mobile app.
             cite me
 
@@ -76,7 +76,7 @@ body
             figure
               img(src="svg/logos/cordova_256.png" style="width:100%")
             figure
-            figure
+            figure.fragment
               img(src="svg/logos/phonegap.svg" style="width:100%")
             
         section
@@ -89,7 +89,7 @@ body
             li Add plugins.
             li Release to the store.
               sup *
-            i * herein lies the problem.
+            i.fragment * herein lies the problem.
 
         section
           p Actually, a few problems...
@@ -104,6 +104,12 @@ body
             li waiting
 
         section
+          img(src="img/true-stories.jpg")
+
+        section
+          p So, I built a mobile app...
+
+        section
           blockquote
             strong From: 
             span Google Play Support
@@ -111,7 +117,7 @@ body
             strong To: 
             span me
             p We have rejected your latest build from the Google Play Store, because it violates our policy on embedded YouTube videos.
-            p Please see this link that kind of sort of describes the policy.
+            p.fragment Please see this webpage that has a whole lot of text, which kind of sort of describes what I'm talking about.
 
         section
           blockquote
@@ -142,6 +148,7 @@ body
             p Right... Except the app doesn't 
               i have 
               span any YouTube videos, of any sort.
+            p.fragment Please advise.
 
         section
           blockquote
@@ -174,6 +181,9 @@ body
           h2 The Internet is not a walled garden.
 
       section
+
+        section(data-background="img/gif/reverse-horse.gif")
+
         section
           blockquote
             p So, when you say you want a mobile app, what do you really want?
@@ -232,8 +242,9 @@ body
             li wake control
             li multitouch
             li bluetooth
+            li quite a bit more.
 
-        section(data-background="gif/gnome-fascinating.gif")
+        section(data-background="img/gif/gnome-fascinating.gif")
 
         section
           p What do you need?
@@ -276,86 +287,9 @@ body
             li URL scope
             li Icons
 
-          //pre(style="font-size:1.5rem;")
-            code.json(style="max-height:55vh;").
-              {
-                "manifest_version": 2.01,
-                "name": "damn dog",
-                "short_name": "damndog",
-                "description": "A guessing game for wikiHow illustrations.",
-                "default_locale": "en",
-                "display": "standalone",
-                "scope": "/",
-                "start_url": "/",
-                "theme_color": "#222730",
-                "background_color": "#222730",
-                "icons": [
-                  {
-                    "src": "/android-chrome-36x36.png",
-                    "sizes": "36x36",
-                    "type": "image/png"
-                  },
-                  {
-                    "src": "/android-chrome-48x48.png",
-                    "sizes": "48x48",
-                    "type": "image/png"
-                  },
-                  {
-                    "src": "/android-chrome-72x72.png",
-                    "sizes": "72x72",
-                    "type": "image/png"
-                  },
-                  {
-                    "src": "/android-chrome-96x96.png",
-                    "sizes": "96x96",
-                    "type": "image/png"
-                  },
-                  {
-                    "src": "/android-chrome-144x144.png",
-                    "sizes": "144x144",
-                    "type": "image/png"
-                  },
-                  {
-                    "src": "/android-chrome-192x192.png",
-                    "sizes": "192x192",
-                    "type": "image/png"
-                  },
-                  {
-                    "src": "/android-chrome-256x256.png",
-                    "sizes": "256x256",
-                    "type": "image/png"
-                  },
-                  {
-                    "src": "/android-chrome-384x384.png",
-                    "sizes": "384x384",
-                    "type": "image/png"
-                  },
-                  {
-                    "src": "/android-chrome-512x512.png",
-                    "sizes": "512x512",
-                    "type": "image/png"
-                  }
-                ]
-              }
-
         section
           code service-worker.js
           p A single javascript file (can be called anything), which will set up functions for installation, caching, permissions, and features.
-          //pre(style="font-size:1.5rem;")
-            code.js(style="max-height:55vh;").
-
-              self.addEventListener('install', e => {
-                // once the SW is installed, go ahead and fetch the resources
-                // to make this work offline
-                e.waitUntil(
-                  caches.open(cacheName).then(cache => {
-                    return cache.addAll([
-                      '/index.html',
-                      // Put critical files here.
-                    ]).then(() => self.skipWaiting());
-                  })
-                );
-              });
 
         section
           p Reference both these files in your index.html
@@ -370,7 +304,7 @@ body
         section
           p The service worker gets its own lifecycle.
 
-        section
+        //-section
           code cachebusting...
           pre(style="font-size:1.5rem;")
             code.html(style="max-height:55vh;").
@@ -457,8 +391,8 @@ body
                 "manifest_version": 2,
                 "name": "PARTY PARTY PARTY PARTY PARTY",
                 "short_name": "PARTY",
-                "description": "PARTY PARTY PARTY PARTY PARTY PARTY PART PARTY PARTY PARTY PARTY PARTY PARTY",
-                "default_locale": "en",
+                "description": "PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY",
+                "default_locale": "en-us",
                 "display": "standalone",
                 "scope": "/",
                 "start_url": "/",
@@ -521,10 +455,8 @@ body
               if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
                   // Registration was successful
-                  console.log('ServiceWorker registration successful with scope: ', registration.scope);
                 }).catch(function(err) {
                   // registration failed :(
-                  console.log('ServiceWorker registration failed: ', err);
                 });
               }
 
@@ -550,8 +482,8 @@ body
           img(src="img/app-switch.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
 
       section
-        section
-          h2 TESTING
+        
+        section(data-background-video="video/testing.mp4" data-background-video-loop="loop" data-background-size="contain")
 
         section
           figure
@@ -566,6 +498,16 @@ body
         section
           figure
             img(src="img/lighthouse-after.png")
+
+        section
+          h3 Strategy for Feature Rollout
+          ol
+            li Test it in Lighthouse
+            li Get it working on your machine(s)
+            li Get it working on friends/coworkers machine(s)
+            li
+              i THEN
+              |  try it out on strangers
 
       section
         section
@@ -628,7 +570,7 @@ body
           p The Notification API
 
         section
-          code serviceworker.js
+          code service-worker.js
           pre(style="font-size:1.5rem;")
             code.js(style="max-height:55vh;").
               // After the install code...
