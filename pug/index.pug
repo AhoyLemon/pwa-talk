@@ -9,32 +9,43 @@ body
     .slides
       section
 
-        // Little Big Uno
-        +videoBG('CkIhFpdJcPM',65)
+        // Factory Kingz (Latvia) vs Killjoys (Belarus)
+        +videoBG('M71keCLsZXw',37)
           h2.shadowed
             | Progressive Web Apps!
             sup *
-
           .a-talk-by(style="margin-top:25.5vh;")
             b.white.shadowed
               | (a talk by @AhoyLemon)
             br
             br
             div.shadowed(style="font-size:26px; line-height:120%") * This talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
+
+          aside.notes
+            h2 Factory Kingz (Latvia) vs Killjoys (Belarus)
       
       section
         section
           h1 Hi!
           h2.fragment My name is Lemon.
           p.fragment (I make websites.)
+          aside.notes
+            p I've been making websites for about 20 years. I make websites for money and I make websites for fun. I love the platform and I think it's a really great opportunity to make fun stuff.
 
         section
           div(style="font-size:68px; font-family:'Lucida Console', Monaco, monospace;") 
             span websites 
             span.fragment != apps
-
+          aside.notes
+            p I consider myself a website maker, and that's different than somebody that makes apps.
+            p These words are used interchangably.
         section
           h3 Let me define my terms.
+          aside.notes
+            p We need to define our terms here because a website can be an app.
+            p The word "webapp" exists, and that's valid.
+            p When I think about websites, I think about freedom.
+            p I think about 3 technologies.
             
         section
           .grid(columns="3")
@@ -44,6 +55,10 @@ body
               img(src="svg/logos/css-3.svg")
             .box
               img(src="svg/logos/javascript.svg")
+          aside.notes
+            p HTML, CSS and Javascript are immutable facts.
+            p No matter what (PHP, .NET, Ruby, React)
+            p I make websites for fun, I make websites for money.
 
         section
           blockquote
@@ -52,6 +67,8 @@ body
           blockquote.fragment
             p Sounds good.
             cite me
+          aside.notes
+            p It goes like this.
 
         section
           blockquote
@@ -60,6 +77,8 @@ body
           blockquote.fragment
             p Okay, but based on what you're trying to do, a mobile app might not be the best solution. What about a website instead?
             cite me
+          aside.notes
+            p Sometimes it goes like this.
         
         section
           blockquote
@@ -70,6 +89,8 @@ body
           blockquote.fragment
             p Okay, let's build a mobile app.
             cite me
+          aside.notes
+            p Sometimes, they don't like that answer.
 
         section
           .grid(columns="3")
@@ -78,6 +99,13 @@ body
             figure
             figure.fragment
               img(src="svg/logos/phonegap.svg" style="width:100%")
+          aside.notes
+            p In that case, I'll make an app
+            p Alternatives:
+            ul
+              li Xamarin
+              li React Native
+              li Ionic
             
         section
           
@@ -105,9 +133,15 @@ body
 
         section
           img(src="img/true-stories.jpg")
+          aside.notes
+            p What follows is a true story
 
         section
           p So, I built a mobile app...
+          aside.notes
+            p Things were going fine, until one day the client had a few very small changes.
+            p I did those changes, submit those to the stores.
+            p Got an email.
 
         section
           blockquote
@@ -128,6 +162,8 @@ body
             span Google Play Support
             p Okay, thank you so much for your note. I am confused on the cause though, as my app does not have any embedded YouTube videos.
             p Can you please explain?
+          aside.notes
+            p I'm polite.
 
         section
           blockquote
@@ -177,17 +213,30 @@ body
             br
             | pointing to a greater concern.
 
+          aside.notes
+            p They cannot offer human support.
+            p APP STORE = 2 MILLION
+            p PLAY STORE = 4 MILLION
+
         section
           h2 The Internet is not a walled garden.
+
+          aside.notes
+            p The internet is a place for mistakes.
+            p When you make a website, failure means nobody goes to your website.
 
       section
 
         section(data-background="img/gif/reverse-horse.gif")
+        aside.notes
+            p Let's reverse time and say the thing I didn't say.
 
         section
           blockquote
             p So, when you say you want a mobile app, what do you really want?
             cite what I should have said
+          aside.notes
+            p They might answer with...
 
         section
           p “I want something that...
@@ -222,6 +271,10 @@ body
                 img(src="img/logos/brave.png" style="max-height:20vh;")
               figure
                 img(src="img/logos/opera.png" style="max-height:20vh;")
+
+          aside.notes
+            p A PWA is a spec.
+            p Google worked on the majority of it. Mozilla and Microsoft helped a lot.
         
         section
           p What is a PWA?
@@ -301,19 +354,19 @@ body
           div.fragment
             img(src="img/after-sw.png")
 
+          aside.notes
+            p Important idea. You've just changed how your website is consumed.
+
         section
           p The service worker gets its own lifecycle.
-
-        //-section
-          code cachebusting...
-          pre(style="font-size:1.5rem;")
-            code.html(style="max-height:55vh;").
-              &lt;script src=&quot;site.min.js?updated=xwJEKgJfizi&quot;&gt;&lt;script&gt;
 
       section
         h2
           | Now, let's see some 
           span.strobe real-world examples
+        aside.notes
+          p Want to show you real-world examples
+          p Want to show you what you can do now.
 
       section
         section
@@ -382,6 +435,11 @@ body
                   );
                 }
               });
+          aside.notes
+            ul
+              li Define necessary files.
+              li keep those files
+              li use those files if you have to
 
         section
           code manifest.json
@@ -459,10 +517,14 @@ body
                   // registration failed :(
                 });
               }
+          aside.notes
+            p Telling browser there's a service worker here, and I'd like you to register it.
 
         section
           figure(style="text-align:center;")
             img(src="img/party-install-prompt.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+          aside.notes
+            p I didn't put this banner here.
         section
           .grid(columns="2")
             figure(style="text-align:center;")
@@ -470,6 +532,8 @@ body
 
             figure(style="text-align:center;")
               img(src="img/app-screen.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+          aside.notes
+            p My phone. My app, alongside "real apps"
 
         section
           .grid(columns="2")
@@ -477,9 +541,14 @@ body
               img(src="img/party-splash.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
             figure(style="text-align:center;")
               img(src="img/party-focus.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+          aside.notes
+            p Left is load (short)
+            p Right is app (chromeless)
 
         section
           img(src="img/app-switch.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+          aside.notes
+            p Runs separately from the browser
 
       section
         
@@ -490,12 +559,16 @@ body
             img(src="img/lighthouse-1024x1024.png" style="max-height:55vh;")
             figcaption
               a(href="https://web.dev/measure/" target="_blank") web.dev/measure
+          aside.notes
+            p DON'T launch browser yet.
 
         section
           figure
             img(src="img/lighthouse-before.png")
+          aside.notes
+            p NOW launch browser.
 
-        section
+        //-section
           figure
             img(src="img/lighthouse-after.png")
 
@@ -508,6 +581,9 @@ body
             li
               i THEN
               |  try it out on strangers
+          aside.notes
+            p Remember the SW can store things and disrupt your process. Keep it in mind when making updates.
+            p NEXT: DAMN.DOG
 
       section
         section
@@ -540,17 +616,28 @@ body
 
               // A lot of the same code goes as before goes here.
 
+          aside.notes
+            p Different needs
+
         section
           img(src="img/screenshots/damn-install-chrome.png")
+          aside.notes
+            p I see this when I go to the site.
+            p Also, you can build a button that does this (more later)
 
         section
           img(src="img/screenshots/damn-self-app.png")
 
         section
           img(src="img/screenshots/damn-offline-full.png")
+          aside.notes
+            p Not exciting, but useful.
 
         section
           img(src="img/logos/winstore.jpg")
+          aside.notes
+            p To bulk up their inventory...
+            p Fill out some forms.
         
         section(data-background="img/screenshots/damn-winstore.png")
           //img(src="img/screenshots/damn-winstore.png")
@@ -568,6 +655,8 @@ body
 
         section
           p The Notification API
+          aside.notes
+            p This is what your client wants.
 
         section
           code service-worker.js
@@ -594,10 +683,17 @@ body
         section
           figure
             img(src="img/pwa-notification.png")
+          aside.notes
+            p A brief word
+            p PLEASE DON'T DO THIS
+          
 
         section
           figure
             img(src="img/screenshots/producthunt.gif")
+          aside.notes
+            p A brief word
+            p PLEASE DON'T DO THIS
 
         section
           p 
@@ -613,6 +709,9 @@ body
               li Twilio
               li OneSignal
               li etc.
+          aside.notes
+            p Can't get into that with the time we have
+            p But I can show you where you can learn.
 
       section
         section
@@ -670,10 +769,25 @@ body
 
       section
         section(data-background="img/bg/mpls-1.jpg")
+          aside.notes
+            p Finally
+            p I'd love to be with you in Romania. I'm in Minneapolis.
+            p A city I love dearly.
+            p And the city that murdered George Floyd.
 
         section(data-background="img/bg/mpls-fire.jpg")
+          aside.notes
+            p Panic and chaos swept the city.
+            p For a few days, I fled the city I love.
+            p I told DevTalks (they were very understanding)
+            p This is what my city looked like
 
         section(data-background="img/bg/floyd-memorial.jpg")
+          aside.notes
+            p And now it looks more like this.
+            p We have systematic problems. They've been there for decades.
+            p But now, more than ever, we have the will to change them.
+            p Kind, passionate, talented people should always try to make things better.
       
       // THANK YOU
       section
@@ -682,10 +796,16 @@ body
           p.white.shadowed
             a(href="https://ahoylemon.xyz" target="_blank") 
               strong ahoylemon.xyz
+          aside.notes
+            p Wish I could be there.
+            p Maybe next time?
+            p Questions?
         
         section(data-background="#e6e924")
           figure
             img(src="svg/lemon.svg" style="width:212px; height:212px;")
+          aside.notes
+            p STICKERS
     
   script(src='lib/js/head.min.js')
   script(src='js/reveal.js')
