@@ -68,7 +68,6 @@
           <aside class="notes">
             <h2>HTML, CSS and Javascript are immutable facts.</h2>
             <h2>No matter what (PHP, .NET, Ruby, React)</h2>
-            <h2>I make websites for fun, I make websites for money.</h2>
           </aside>
         </section>
         <section>
@@ -94,7 +93,7 @@
             <cite>me</cite>
           </blockquote>
           <aside class="notes">
-            <p>Sometimes it goes like this.</p>
+            <h2>Sometimes it goes like this.</h2>
           </aside>
         </section>
         <section>
@@ -107,7 +106,7 @@
             <cite>me</cite>
           </blockquote>
           <aside class="notes">
-            <p>Sometimes, they don't like that answer.</p>
+            <h2>Sometimes, they don't like that answer.</h2>
           </aside>
         </section>
         <section>
@@ -127,7 +126,7 @@
           </aside>
         </section>
         <section>
-          <p>Building an app in Cordova/phonegap..</p>
+          <p>Building an app in Cordova/phonegap...</p>
           <ol>
             <li>Build an HTML website.</li>
             <li>Wrap it in a vendor-specific webview.</li>
@@ -154,6 +153,7 @@
         </section>
         <section>
           <p>So, I built a mobile app...</p>
+          <p class="fragment">...and then I made a small change.</p>
           <aside class="notes">
             <p>Things were going fine, until one day the client had a few very small changes.</p>
             <p>I did those changes, submit those to the stores.</p>
@@ -570,7 +570,30 @@ self.addEventListener('install', function(event) {
   );
 });
 
-// A lot of the same code goes as before goes here.
+self.addEventListener('fetch', function(event) {
+  // Only fall back for HTML documents.
+  var request = event.request;
+  // && request.headers.get('accept').includes('text/html')
+  if (request.method === 'GET') {
+    // `fetch()` will use the cache when possible, to this examples
+    // depends on cache-busting URL parameter to avoid the cache.
+    event.respondWith(
+      fetch(request).catch(function(error) {
+        // `fetch()` throws an exception when the server is unreachable but not
+        // for valid HTTP responses, even `4xx` or `5xx` range.
+        console.error(
+          '[onfetch] Failed. Serving cached offline fallback ' +
+          error
+        );
+        return caches.open('offline').then(function(cache) {
+          return cache.match(offlineUrl);
+        });
+      })
+    );
+  }
+  // Any other handlers come here. Without calls to `event.respondWith()` the
+  // request will be handled without the ServiceWorker.
+});
 </code></pre>
           <aside class="notes">
             <p>Different needs</p>
