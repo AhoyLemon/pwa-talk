@@ -10,7 +10,7 @@ body
       section
 
         // Extreme Crew (Korea)
-        +videoBG('p9JiFo945fs',70) 
+        +videoBG('jSZ9QB5Myw4',370) 
           h2.shadowed
             | Progressive Web Apps!
             sup *
@@ -22,22 +22,27 @@ body
             div.shadowed(style="font-size:26px; line-height:120%") * This talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
 
           aside.notes
-            h2 Factory Kingz (Latvia) vs Killjoys (Belarus)
+            h2 Jinjo Crew (Korea)
+              br
+              | vs 
+              br
+              | The Ruggeds (Netherlands)
+            p 2019
 
         // Last Squad (france) vs Artistreet (Korea) | 2019
-        +videoBG('EzglYPf7Ylk',100)
-          h2.shadowed
-            | Progressive Web Apps!
-            sup *
-          .a-talk-by(style="margin-top:25.5vh;")
-            b.white.shadowed
-              | (a talk by @AhoyLemon)
-            br
-            br
-            div.shadowed(style="font-size:26px; line-height:120%") * This talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
+        //- +videoBG('EzglYPf7Ylk',100)
+        //-   h2.shadowed
+        //-     | Progressive Web Apps!
+        //-     sup *
+        //-   .a-talk-by(style="margin-top:25.5vh;")
+        //-     b.white.shadowed
+        //-       | (a talk by @AhoyLemon)
+        //-     br
+        //-     br
+        //-     div.shadowed(style="font-size:26px; line-height:120%") * This talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
 
-          aside.notes
-            h2 Last Squad (france) vs Artistreet (Korea) | 2019
+        //-   aside.notes
+        //-     h2 Last Squad (france) vs Artistreet (Korea) | 2019
       
       section
         section
@@ -122,6 +127,15 @@ body
               li Xamarin
               li React Native
               li Ionic
+
+        section
+          .grid(columns="3")
+            figure
+            figure
+              img(src="svg/logos/cordova_256.png" style="width:100%")
+            figure
+              //img(src="svg/logos/phonegap.svg" style="width:100%")
+
             
         section
           p Building an app in Cordova...
@@ -232,7 +246,7 @@ body
           aside.notes
             p They cannot offer human support.
             p APP STORE = 2 MILLION
-            p PLAY STORE = 4 MILLION
+            p PLAY STORE = 6 MILLION
 
         section
           h2 The Internet is not a walled garden.
@@ -262,7 +276,7 @@ body
             li will work offline
             li uses camera & microphone
             li geolocation
-            li
+            li.fragment
               strong has push notifications
 
         section
@@ -544,10 +558,10 @@ body
         section
           .grid(columns="2")
             figure(style="text-align:center;")
-              img(src="img/home-screen.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+              img(src="img/screenshots/homescreen-2021-11-30.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
 
             figure(style="text-align:center;")
-              img(src="img/app-screen.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+              img(src="img/screenshots/apparray-2021-11-30.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
           aside.notes
             p My phone. My app, alongside "real apps"
 
@@ -802,7 +816,7 @@ body
             figcaption by Maye Edwin & Marta Wiśniewska
 
 
-        section
+        //-section
           figure
             h2
               a(href="https://pwasummit.org/" target="_blank") PWA Summit
@@ -866,7 +880,7 @@ body
           figure
             img(src="svg/lemon.svg" style="width:212px; height:212px;")
           aside.notes
-            p STICKERS
+            h1 STICKERS
     
   script(src='lib/js/head.min.js')
   script(src='js/reveal.js')
