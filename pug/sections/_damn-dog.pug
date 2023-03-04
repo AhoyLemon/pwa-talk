@@ -1,0 +1,148 @@
+section
+  section
+    a(href="https://damn.dog" target="_blank")
+      img(src="img/logos/damn-og-wide.png")
+
+  section
+    code service-worker.js
+    pre
+      code.js.
+        const cacheName = 'v2.17';
+        const offlineUrl = '/offline.html';
+        const offlineFiles = [
+          '/index.html',
+          '/offline.html',
+          '/manifest.json',
+          '/css/damn.css',
+          '/js/libraries/vue.min.js',
+          '/js/min/damn.min.js',
+          '/svg/offline-dog.svg'
+        ];
+
+        self.addEventListener('install', function(event) {
+          event.waitUntil(
+            caches.open(cacheName).then(function(cache) {
+              return cache.addAll(cacheName);
+            })
+          );
+        });
+
+        self.addEventListener('fetch', function(event) {
+          // Only fall back for HTML documents.
+          var request = event.request;
+          // && request.headers.get('accept').includes('text/html')
+          if (request.method === 'GET') {
+            // `fetch()` will use the cache when possible, to this examples
+            // depends on cache-busting URL parameter to avoid the cache.
+            event.respondWith(
+              fetch(request).catch(function(error) {
+                // `fetch()` throws an exception when the server is unreachable but not
+                // for valid HTTP responses, even `4xx` or `5xx` range.
+                console.error(
+                  '[onfetch] Failed. Serving cached offline fallback ' +
+                  error
+                );
+                return caches.open('offline').then(function(cache) {
+                  return cache.match(offlineUrl);
+                });
+              })
+            );
+          }
+          // Any other handlers come here. Without calls to `event.respondWith()` the
+          // request will be handled without the ServiceWorker.
+        });
+
+    aside.notes
+      p Different needs
+
+  section
+    img(src="img/screenshots/damn-install-chrome.png")
+    aside.notes
+      p I see this when I go to the site.
+      p Also, you can build a button that does this (more later)
+
+  section
+    img(src="img/screenshots/damn-self-app.png")
+
+  section
+    img(src="img/screenshots/damn-offline-full.png")
+    aside.notes
+      p Not exciting, but useful.
+
+  section
+    img(src="img/logos/winstore.jpg")
+    aside.notes
+      p To bulk up their inventory...
+      p Fill out some forms.
+  
+  section(data-background="img/screenshots/damn-winstore.png")
+
+  section(data-background-video="video/fancy-omar.mp4" data-background-video-loop="loop" data-background-size="contain")
+    figure
+      img(src="img/fancier.png" style="max-width:600px;")
+
+  section
+    img(src="img/screenshots/damn-sidebar-open.png")
+
+  section
+    img(src="img/screenshots/damn-sidebar-circled.png")
+
+  section
+    p The Notification API
+    aside.notes
+      p This is what your client wants.
+
+  section
+    code service-worker.js
+    pre
+      code.js.
+        // After the install code...
+
+        Notification.requestPermission(result => {
+          if (result === 'granted') {
+            //permission granted.
+            navigator.serviceWorker.ready.then(registration => {
+              registration.showNotification(
+                'Damn Dog has been updated!', {
+                icon: '/android-chrome-96x96.png',
+                //vibrate: [500, 100, 500],
+                body: '7 new rounds have been added to damn.dog,
+                        bringing the total up to 358.',
+                tag: 'game-updated'
+              });
+            });
+          }
+        });
+
+  section
+    figure
+      img(src="img/screenshots/pwa-notification.png")
+    aside.notes
+      p A brief word
+      p PLEASE DON'T DO THIS
+    
+
+  section
+    figure
+      img(src="img/screenshots/producthunt.gif")
+    aside.notes
+      p A brief word
+      p PLEASE DON'T DO THIS
+
+  section
+    p 
+      strong Q: 
+      | How do I push to users not currently on the website?
+
+    .fragment
+      p 
+        strong A: 
+        | The same way you'd handle any other kind of push subscription
+      ul
+        li Firebase
+        li Twilio
+        li OneSignal
+        li etc.
+    aside.notes
+      p Can't get into that with the time we have
+      p But I can show you where you can learn.
