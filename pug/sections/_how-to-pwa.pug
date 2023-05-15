@@ -1,0 +1,48 @@
+section
+  section
+    p What do you need?
+    ol
+      li 
+        span HTTPS connection
+      li 
+        code manifest.json
+      li
+        code service-worker.js
+
+  section
+    p Where can I get a HTTPS certificate?
+    p 
+      i PS: For free?
+
+    ul
+      li GitHub Pages
+      li Let's Encrypt
+      li Cloudflare
+      li Many cPanel-based hosting platforms
+        br
+        sub (personal rec's: Green Geeks & InMotion)
+
+  section
+    p Regardless: get a cert, turn it on, and direct 
+      i all
+      |  HTTP traffic to HTTPS.
+
+
+  section
+    code manifest.json
+
+    p A json file located in the root of your project, which will define some values...
+    ul
+      li Name & Description
+      li Color Scheme
+      li Languages
+      li Orientation
+      li URL scope
+      li Icons
+
+  section
+    code service-worker.js
+    p A single javascript file (can be called anything), which will set up functions for installation, caching, permissions, and features.
+
+  section
+    p Reference both these files in your index.html

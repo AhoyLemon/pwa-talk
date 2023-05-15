@@ -181,6 +181,8 @@
             <li>waiting</li>
           </ol>
         </section>
+      </section>
+      <section>
         <section><img src="img/true-stories.jpg">
           <aside class="notes">
             <p>What follows is a true story</p>
@@ -249,10 +251,11 @@
         </section>
       </section>
       <section>
-        <section data-background="img/gif/reverse-horse.gif"></section>
-        <aside class="notes">
-          <p>Let's reverse time and say the thing I didn't say.</p>
-        </aside>
+        <section data-background="img/gif/reverse-horse.gif">
+          <aside class="notes">
+            <p>Let's reverse time and say the thing I didn't say.</p>
+          </aside>
+        </section>
         <section>
           <blockquote>
             <p>So, when you say you want a mobile app, what do you really want?</p>
@@ -314,44 +317,74 @@
           </ul>
         </section>
         <section data-background="img/gif/gnome-fascinating.gif"></section>
-        <section>
-          <p>What do you need?</p>
-          <ol>
-            <li> <span>HTTPS connection</span></li>
-            <li> <code>manifest.json</code></li>
-            <li><code>service-worker.js</code></li>
-          </ol>
+      </section>
+      <section>
+        <section data-background="img/gif/reverse-horse.gif">
+          <aside class="notes">
+            <p>Let's reverse time and say the thing I didn't say.</p>
+          </aside>
         </section>
         <section>
-          <p>Where can I get a HTTPS certificate?</p>
-          <p> <i>PS: For free?</i></p>
+          <blockquote>
+            <p>So, when you say you want a mobile app, what do you really want?</p>
+            <cite>what I should have said</cite>
+          </blockquote>
+          <aside class="notes">
+            <p>They might answer with...</p>
+          </aside>
+        </section>
+        <section>
+          <p>“I want something that...</p>
           <ul>
-            <li>GitHub Pages</li>
-            <li>Let's Encrypt</li>
-            <li>Cloudflare</li>
-            <li>Many cPanel-based hosting platforms<br><sub>(personal rec's: Green Geeks & InMotion)</sub></li>
+            <li>has an app-like interface</li>
+            <li>can be installed on a user's machine</li>
+            <li>will work offline</li>
+            <li>uses camera & microphone</li>
+            <li>geolocation</li>
+            <li class="fragment"><strong>has push notifications</strong></li>
           </ul>
         </section>
+        <section><img src="svg/pwa.svg"></section>
         <section>
-          <p>Regardless: get a cert, turn it on, and direct <i>all</i> HTTP traffic to HTTPS.</p>
+          <p>A spec written by...</p>
+          <div class="grid" columns="3" style="margin-bottom:2em;">
+            <figure><img src="img/logos/chrome.png" style="max-height:20vh;"></figure>
+            <figure><img src="img/logos/firefox.png" style="max-height:20vh;"></figure>
+            <figure><img src="img/logos/edge.png" style="max-height:20vh;"></figure>
+          </div>
+          <div class="fragment">
+            <p>Supported by</p>
+            <div class="grid" columns="3">
+              <figure><img src="img/logos/safari.png" style="max-height:20vh;"></figure>
+              <figure><img src="img/logos/brave.png" style="max-height:20vh;"></figure>
+              <figure><img src="img/logos/opera.png" style="max-height:20vh;"></figure>
+            </div>
+          </div>
+          <aside class="notes">
+            <p>A PWA is a spec.</p>
+            <p>Google worked on the majority of it. Mozilla and Microsoft helped a lot.</p>
+          </aside>
         </section>
-        <section><code>manifest.json</code>
-          <p>A json file located in the root of your project, which will define some values...</p>
+        <section>
+          <p>What can you do with a PWA?</p>
+          <p class="fragment">Potentially a lot of things.</p>
+        </section>
+        <section>
+          <p>What <b>can be</b> in a PWA?</p>
           <ul>
-            <li>Name & Description</li>
-            <li>Color Scheme</li>
-            <li>Languages</li>
-            <li>Orientation</li>
-            <li>URL scope</li>
-            <li>Icons</li>
+            <li>installable</li>
+            <li>works offline</li>
+            <li>notifications</li>
+            <li>managed caching</li>
+            <li>runs chromeless</li>
+            <li>native sharing</li>
+            <li>wake control</li>
+            <li>multitouch</li>
+            <li>bluetooth</li>
+            <li>quite a bit more.</li>
           </ul>
         </section>
-        <section><code>service-worker.js</code>
-          <p>A single javascript file (can be called anything), which will set up functions for installation, caching, permissions, and features.</p>
-        </section>
-        <section>
-          <p>Reference both these files in your index.html</p>
-        </section>
+        <section data-background="img/gif/gnome-fascinating.gif"></section>
       </section>
       <section>
         <section>
@@ -364,13 +397,13 @@
         <section>
           <p>The service worker gets its own lifecycle.</p>
         </section>
-      </section>
-      <section>
-        <h2>Now, let's see some <span class="strobe">real-world examples</span></h2>
-        <aside class="notes">
-          <p>Want to show you real-world examples</p>
-          <p>Want to show you what you can do now.</p>
-        </aside>
+        <section>
+          <h2>Now, let's see some <span class="strobe">real-world examples</span></h2>
+          <aside class="notes">
+            <p>Want to show you real-world examples</p>
+            <p>Want to show you what you can do now.</p>
+          </aside>
+        </section>
       </section>
       <section>
         <section>
@@ -679,7 +712,7 @@ Notification.requestPermission(result => {
         icon: '/android-chrome-96x96.png',
         //vibrate: [500, 100, 500],
         body: '7 new rounds have been added to damn.dog,
-               bringing the total up to 358.',
+                bringing the total up to 358.',
         tag: 'game-updated'
       });
     });

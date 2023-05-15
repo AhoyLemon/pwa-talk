@@ -1,0 +1,94 @@
+section    
+  section
+    .grid(columns="3")
+      .box
+        img(src="svg/logos/html-5.svg")
+      .box
+        img(src="svg/logos/css-3.svg")
+      .box
+        img(src="svg/logos/javascript.svg")
+    aside.notes
+      h2 HTML, CSS and Javascript are immutable facts.
+      h2 No matter what (PHP, .NET, Ruby, React)
+
+  section
+    blockquote
+      p I want you to build me a website!
+      cite The Client
+    blockquote.fragment
+      p Sounds good.
+      cite me
+    aside.notes
+      h2 It goes like this.
+
+  section
+    blockquote
+      p I want you to build me a mobile app!
+      cite The Client
+    blockquote.fragment
+      p Okay, but based on what you're trying to do, a mobile app might not be the best solution. What about a website instead?
+      cite me
+    aside.notes
+      h2 Sometimes it goes like this.
+  
+  section
+    blockquote
+      p I want you to build me a mobile app, and I'll pay you a 
+        strong lot of money 
+        | to do it.
+      cite The Client
+    blockquote.fragment
+      p Okay, let's build a mobile app.
+      cite me
+    aside.notes
+      h2 Sometimes, they don't like that answer.
+
+  section
+    .grid(columns="3")
+      figure
+        img(src="svg/logos/cordova_256.png" style="width:100%")
+      figure
+      figure.fragment
+        img(src="svg/logos/phonegap.svg" style="width:100%")
+
+  section(data-background="img/bg/phonegap-closed.png")
+    aside.notes
+      p In that case, I'll make an app
+      p Alternatives:
+      ul
+        li Xamarin
+        li React Native
+        li Ionic
+
+  section
+    .grid(columns="3")
+      figure
+      figure
+        img(src="svg/logos/cordova_256.png" style="width:100%")
+      figure
+        //img(src="svg/logos/phonegap.svg" style="width:100%")
+
+      
+  section
+    p Building an app in Cordova...
+
+    ol
+      li Build an HTML website.
+      li Wrap it in a vendor-specific webview.
+      li Add plugins.
+      li Release to the store.
+        sup *
+      i.fragment * herein lies the problem.
+
+  section
+    p Actually, a few problems...
+
+    ol
+      li app signing
+      li plugin versioning
+      li incompatable dependencies
+      li incompatable phones
+      li style & content rules
+      li changing rules
+      li possibility of rejection
+      li waiting

@@ -1,0 +1,181 @@
+section
+  section
+    figure
+      a(href="https://partypartypartyparty.party" target="_blank")
+        img(src="img/party-square.png" style="max-height:50vh;")
+        figcaption
+          | partypartypartyparty.party
+
+  section
+    blockquote
+      p I need to be able to party efficiently when I don't have internet.
+      cite a friend
+    blockquote.fragment
+      p That's an excellent point!
+      cite me
+
+  section
+    code service-worker.js
+    pre(style="font-size:1.5rem;")
+      code.js(style="max-height:55vh;").
+        const offlineUrl = '/index.html';
+        const offlineFiles = [
+          '/index.html',
+          '/manifest.json',
+          '/css/party.css',
+          '/js/min/jquery.min.js',
+          '/js/min/howler.min.js',
+          '/js/min/party.min.js',
+          '/audio/party.mp3',
+          '/audio/venga.mp3'
+        ];
+
+        /*****
+        On install, the service worker will take all our
+        required files, and store those locally. */
+        self.addEventListener('install', function(event) {
+          var offlineRequest = new Request(offlineFiles);
+          event.waitUntil(
+            fetch(offlineRequest).then(function(response) {
+              return caches.open('offline').then(function(cache) {
+                return cache.put(offlineRequest, response);
+              });
+            })
+          );
+        });
+
+        /************
+        Then, on a fetch request, the service worker 
+        will check for response.
+        If everything seems to be offline, serve the
+        offline files instead.  */
+        self.addEventListener('fetch', function(event) {
+          var request = event.request;
+          if (request.method === 'GET') {
+            event.respondWith(
+              fetch(request).catch(function(error) {
+                console.error(
+                  '[onfetch] Failed. Serving cached offline fallback ' +
+                  error
+                );
+                return caches.open('offline').then(function(cache) {
+                  return cache.match(offlineUrl);
+                });
+              })
+            );
+          }
+        });
+    aside.notes
+      ul
+        li Define necessary files.
+        li keep those files
+        li use those files if you have to
+
+  section
+    code manifest.json
+    pre(style="font-size:1.5rem;")
+      code.json(style="max-height:55vh;").
+        {
+          "manifest_version": 2,
+          "name": "PARTY PARTY PARTY PARTY PARTY",
+          "short_name": "PARTY",
+          "description": "PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY",
+          "default_locale": "en-us",
+          "display": "standalone",
+          "scope": "/",
+          "start_url": "/",
+          "theme_color": "#d1d1d1",
+          "background_color": "#d1d1d1",
+          "icons": [
+            {
+              "src": "/icon-36x36.png",
+              "sizes": "36x36",
+              "type": "image/png"
+            },
+            {
+              "src": "/icon-48x48.png",
+              "sizes": "48x48",
+              "type": "image/png"
+            },
+            {
+              "src": "/icon-72x72.png",
+              "sizes": "72x72",
+              "type": "image/png"
+            },
+            {
+              "src": "/icon-96x96.png",
+              "sizes": "96x96",
+              "type": "image/png"
+            },
+            {
+              "src": "/icon-144x144.png",
+              "sizes": "144x144",
+              "type": "image/png"
+            },
+            {
+              "src": "/icon-192x192.png",
+              "sizes": "192x192",
+              "type": "image/png"
+            },
+            {
+              "src": "/icon-256x256.png",
+              "sizes": "256x256",
+              "type": "image/png"
+            },
+            {
+              "src": "/icon-384x384.png",
+              "sizes": "384x384",
+              "type": "image/png"
+            },
+            {
+              "src": "/icon-512x512.png",
+              "sizes": "512x512",
+              "type": "image/png"
+            }
+          ]
+        }
+
+  section
+    code index.html
+    pre(style="font-size:1.5rem;")
+      code.js(style="max-height:55vh;").
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            // Registration was successful
+          }).catch(function(err) {
+            // registration failed :(
+          });
+        }
+    aside.notes
+      p Telling browser there's a service worker here, and I'd like you to register it.
+
+  section
+    figure(style="text-align:center;")
+      img(src="img/party-install-prompt.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+    aside.notes
+      p I didn't put this banner here.
+  section
+    .grid(columns="2")
+      figure(style="text-align:center;")
+        img(src="img/screenshots/homescreen-2021-11-30.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+
+      figure(style="text-align:center;")
+        img(src="img/screenshots/apparray-2021-11-30.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+    aside.notes
+      p My phone. My app, alongside "real apps"
+
+  section
+    .grid(columns="2")
+      figure(style="text-align:center;")
+        img(src="img/party-splash.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+      figure(style="text-align:center;")
+        img(src="img/party-focus.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+    aside.notes
+      p Left is load (short)
+      p Right is app (chromeless)
+
+  section
+    img(src="img/app-switch.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;")
+    aside.notes
+      p Runs separately from the browser
