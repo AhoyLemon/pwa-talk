@@ -68,8 +68,15 @@
   }
 }
 .reveal h1, .reveal h2, .reveal h3 {
-  /* font-family:$serif; */
   text-transform: none;
+}
+.reveal h1.black, .reveal h2.black, .reveal h3.black, .reveal h4.black {
+  color: #212121;
+  text-shadow: 2px 2px 2px white, 4px 4px 2px rgba(0, 0, 0, 0.5);
+}
+.reveal h1.dark-blue, .reveal h2.dark-blue, .reveal h3.dark-blue, .reveal h4.dark-blue {
+  color: #221c35;
+  text-shadow: 2px 2px 2px white, 4px 4px 6px rgba(0, 0, 0, 0.5);
 }
 .reveal pre {
   -webkit-box-shadow: none;

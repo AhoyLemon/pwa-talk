@@ -1,0 +1,197 @@
+<!DOCTYPE html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>PWA Talk</title><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Work+Sans:300,400,700"><link rel="stylesheet" href="css/reveal.css"><link rel="stylesheet" href="css/theme/night.css"><!-- Theme used for syntax highlighting of code--><link rel="stylesheet" href="lib/css/zenburn.css"><!-- Printing and PDF exports--><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script><link rel="stylesheet" href="css/overwrites.css"></head><body> <div class="reveal"><div class="slides"><section><!-- Extreme Crew (Korea)--><section data-background-iframe="https://www.youtube.com/embed/jSZ9QB5Myw4?start=370&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;autohide=1&amp;showinfo=0&amp;disablekb=1" data-background-interactive> <h2 class="shadowed">Progressive Web Apps!<sup>*</sup></h2><div class="a-talk-by" style="margin-top:25.5vh;"><b class="white shadowed">(a talk by @AhoyLemon)</b><br><br><div class="shadowed" style="font-size:26px; line-height:120%">* This talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long</div></div><aside class="notes"><h2>Jinjo Crew (Korea)<br>vs <br>The Ruggeds (Netherlands)</h2><p>2019</p></aside></section><!-- Last Squad (france) vs Artistreet (Korea) | 2019--></section><section><section><h1>Hi!</h1><h2 class="fragment">My name is Lemon.</h2><p class="fragment">(I make websites.)</p><aside class="notes"><h2>I've been making websites for about 20 years. I make websites for money and I make websites for fun. I love the platform and I think it's a really great opportunity to make fun stuff.</h2></aside></section><section><div style="font-size:68px; font-family:'Lucida Console', Monaco, monospace;"> <span>websites </span><span class="fragment">!= apps</span></div><aside class="notes"><h2>I consider myself a website maker, and that's different than somebody that makes apps.</h2><h2>These words are used interchangably.</h2></aside></section><section><h3>Let me define my terms.</h3><aside class="notes"><h2>We need to define our terms here because a website can be an app.</h2><h2>The word "webapp" exists, and that's valid.</h2><h2>When I think about websites, I think about freedom.</h2><h2>I think about 3 technologies.</h2></aside></section><section><div class="grid" columns="3"><div class="box"><img src="svg/logos/html-5.svg"></div><div class="box"><img src="svg/logos/css-3.svg"></div><div class="box"><img src="svg/logos/javascript.svg"></div></div><aside class="notes"><h2>HTML, CSS and Javascript are immutable facts.</h2><h2>No matter what (PHP, .NET, Ruby, React)</h2></aside></section><section><blockquote><p>I want you to build me a website!</p><cite>The Client</cite></blockquote><blockquote class="fragment"><p>Sounds good.</p><cite>me</cite></blockquote><aside class="notes"><h2>It goes like this.</h2></aside></section><section><blockquote><p>I want you to build me a mobile app!</p><cite>The Client</cite></blockquote><blockquote class="fragment"><p>Okay, but based on what you're trying to do, a mobile app might not be the best solution. What about a website instead?</p><cite>me</cite></blockquote><aside class="notes"><h2>Sometimes it goes like this.</h2></aside></section><section><blockquote><p>I want you to build me a mobile app, and I'll pay you a <strong>lot of money </strong>to do it.</p><cite>The Client</cite></blockquote><blockquote class="fragment"><p>Okay, let's build a mobile app.</p><cite>me</cite></blockquote><aside class="notes"><h2>Sometimes, they don't like that answer.</h2></aside></section><section><div class="grid" columns="3"><figure><img src="svg/logos/cordova_256.png" style="width:100%"></figure><figure></figure><figure class="fragment"><img src="svg/logos/phonegap.svg" style="width:100%"></figure></div></section><section data-background="img/bg/phonegap-closed.png"><aside class="notes"><p>In that case, I'll make an app</p><p>Alternatives:</p><ul><li>Xamarin</li><li>React Native</li><li>Ionic</li></ul></aside></section><section><div class="grid" columns="3"><figure></figure><figure><img src="svg/logos/cordova_256.png" style="width:100%"></figure><figure><!--img(src="svg/logos/phonegap.svg" style="width:100%")--></figure></div></section><section><p>Building an app in Cordova...</p><ol><li>Build an HTML website.</li><li>Wrap it in a vendor-specific webview.</li><li>Add plugins.</li><li>Release to the store.<sup>*</sup></li><i class="fragment">* herein lies the problem.</i></ol></section><section><p>Actually, a few problems...</p><ol><li>app signing</li><li>plugin versioning</li><li>incompatable dependencies</li><li>incompatable phones</li><li>style & content rules</li><li>changing rules</li><li>possibility of rejection</li><li>waiting</li></ol></section><section><img src="img/true-stories.jpg"><aside class="notes"><p>What follows is a true story</p></aside></section><section><p>So, I built a mobile app...</p><p class="fragment">...and then I made a small change.</p><aside class="notes"><p>Things were going fine, until one day the client had a few very small changes.</p><p>I did those changes, submit those to the stores.</p><p>Got an email.</p></aside></section><section><blockquote><strong>From: </strong><span>Google Play Support</span><br><strong>To: </strong><span>me</span><p>We have rejected your latest build from the Google Play Store, because it violates our policy on embedded YouTube videos.</p><p class="fragment">Please see this webpage that has a whole lot of text, which kind of sort of describes what I'm talking about.</p></blockquote></section><section><blockquote><strong>From: </strong><span>me</span><br><strong>To: </strong><span>Google Play Support</span><p>Okay, thank you so much for your note. I am confused on the cause though, as my app does not have any embedded YouTube videos.</p><p>Can you please explain?</p></blockquote><aside class="notes"><p>I'm polite.</p></aside></section><section><blockquote><strong>From: </strong><span>Google Play Support</span><br><strong>To: </strong><span>me</span><p>The embedded YouTube videos in your app violate our policy on embedded YouTube videos.</p></blockquote></section><section><blockquote><strong>From: </strong><span>me</span><br><strong>To: </strong><span>Google Play Support</span><p>Right... Except the app doesn't <i>have </i><span>any YouTube videos, of any sort.</span></p><p class="fragment">Please advise.</p></blockquote></section><section><blockquote><strong>From: </strong><span>Google Play Support</span><br><strong>To: </strong><span>me</span><br><p>We do not offer support.</p></blockquote></section><section><blockquote><strong>From: </strong><span class="strobe">Google Play Support</span><br><strong>To: </strong><span>me</span><br><p>We do not offer <span class="strobe">support.</span></p></blockquote></section><section><p> This is a specific problem.<br>pointing to a greater concern.</p><aside class="notes"><p>They cannot offer human support.</p><p>APP STORE = 2 MILLION</p><p>PLAY STORE = 6 MILLION</p></aside></section><section><h2>The Internet is not a walled garden.</h2><aside class="notes"><p>The internet is a place for mistakes.</p><p>When you make a website, failure means nobody goes to your website.</p></aside></section></section><section><section data-background="img/gif/reverse-horse.gif"></section><aside class="notes"><p>Let's reverse time and say the thing I didn't say.</p></aside><section><blockquote><p>So, when you say you want a mobile app, what do you really want?</p><cite>what I should have said</cite></blockquote><aside class="notes"><p>They might answer with...</p></aside></section><section><p>“I want something that...</p><ul><li>has an app-like interface</li><li>can be installed on a user's machine</li><li>will work offline</li><li>uses camera & microphone</li><li>geolocation</li><li class="fragment"><strong>has push notifications</strong></li></ul></section><section><img src="svg/pwa.svg"></section><section><p>A spec written by...</p><div class="grid" columns="3" style="margin-bottom:2em;"><figure><img src="img/logos/chrome.png" style="max-height:20vh;"></figure><figure><img src="img/logos/firefox.png" style="max-height:20vh;"></figure><figure><img src="img/logos/edge.png" style="max-height:20vh;"></figure></div><div class="fragment"><p>Supported by</p><div class="grid" columns="3"><figure><img src="img/logos/safari.png" style="max-height:20vh;"></figure><figure><img src="img/logos/brave.png" style="max-height:20vh;"></figure><figure><img src="img/logos/opera.png" style="max-height:20vh;"></figure></div></div><aside class="notes"><p>A PWA is a spec.</p><p>Google worked on the majority of it. Mozilla and Microsoft helped a lot.</p></aside></section><section><p>What is a PWA?</p><p class="fragment">Potentially a lot of things.</p></section><section><p>What <b>can be</b> in a PWA?</p><ul><li>installable</li><li>works offline</li><li>notifications</li><li>managed caching</li><li>runs chromeless</li><li>native sharing</li><li>wake control</li><li>multitouch</li><li>bluetooth</li><li>quite a bit more.</li></ul></section><section data-background="img/gif/gnome-fascinating.gif"></section><section><p>What do you need?</p><ol><li> <strong>HTTPS connection</strong></li><li> <code>manifest.json</code></li><li><code>service-worker.js</code></li></ol></section><section><p>Where can I get a HTTPS certificate?</p><p> <i>PS: For free?</i></p><ul><li>GitHub Pages</li><li>Let's Encrypt</li><li>Cloudflare</li><li>Many cPanel-based hosting platforms<br><sub>(personal rec's: Green Geeks & InMotion)</sub></li></ul></section><section><p>Regardless: get a cert, turn it on, and direct <i>all</i> HTTP traffic to HTTPS.</p></section><section><code>manifest.json</code><p>A json file located in the root of your project, which will define some values...</p><ul><li>Name & Description</li><li>Color Scheme</li><li>Languages</li><li>Orientation</li><li>URL scope</li><li>Icons</li></ul></section><section><code>service-worker.js</code><p>A single javascript file (can be called anything), which will set up functions for installation, caching, permissions, and features.</p></section><section><p>Reference both these files in your index.html</p></section></section><section><section><div><img src="img/before-sw.png"></div><div class="fragment"><img src="img/after-sw.png"></div><aside class="notes"><p>Important idea. You've just changed how your website is consumed.</p></aside></section><section><p>The service worker gets its own lifecycle.</p></section></section><section><h2>Now, let's see some <span class="strobe">real-world examples</span></h2><aside class="notes"><p>Want to show you real-world examples</p><p>Want to show you what you can do now.</p></aside></section><section><section><figure><a href="https://partypartypartyparty.party" target="_blank"><img src="img/party-square.png" style="max-height:50vh;"><figcaption>partypartypartyparty.party</figcaption></a></figure></section><section><blockquote><p>I need to be able to party efficiently when I don't have internet.</p><cite>a friend</cite></blockquote><blockquote class="fragment"><p>That's an excellent point!</p><cite>me</cite></blockquote></section><section><code>service-worker.js</code><pre style="font-size:1.5rem;"><code class="js" style="max-height:55vh;">const offlineUrl = '/index.html';
+const offlineFiles = [
+  '/index.html',
+  '/manifest.json',
+  '/css/party.css',
+  '/js/min/jquery.min.js',
+  '/js/min/howler.min.js',
+  '/js/min/party.min.js',
+  '/audio/party.mp3',
+  '/audio/venga.mp3'
+];
+
+/*****
+On install, the service worker will take all our
+required files, and store those locally. */
+self.addEventListener('install', function(event) {
+  var offlineRequest = new Request(offlineFiles);
+  event.waitUntil(
+    fetch(offlineRequest).then(function(response) {
+      return caches.open('offline').then(function(cache) {
+        return cache.put(offlineRequest, response);
+      });
+    })
+  );
+});
+
+/************
+Then, on a fetch request, the service worker 
+will check for response.
+If everything seems to be offline, serve the
+offline files instead.  */
+self.addEventListener('fetch', function(event) {
+  var request = event.request;
+  if (request.method === 'GET') {
+    event.respondWith(
+      fetch(request).catch(function(error) {
+        console.error(
+          '[onfetch] Failed. Serving cached offline fallback ' +
+          error
+        );
+        return caches.open('offline').then(function(cache) {
+          return cache.match(offlineUrl);
+        });
+      })
+    );
+  }
+});</code></pre><aside class="notes"><ul><li>Define necessary files.</li><li>keep those files</li><li>use those files if you have to</li></ul></aside></section><section><code>manifest.json</code><pre style="font-size:1.5rem;"><code class="json" style="max-height:55vh;">{
+  "manifest_version": 2,
+  "name": "PARTY PARTY PARTY PARTY PARTY",
+  "short_name": "PARTY",
+  "description": "PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY PARTY",
+  "default_locale": "en-us",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "theme_color": "#d1d1d1",
+  "background_color": "#d1d1d1",
+  "icons": [
+    {
+      "src": "/icon-36x36.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+</code></pre></section><section><code>index.html</code><pre style="font-size:1.5rem;"><code class="js" style="max-height:55vh;">// Register the service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+    // Registration was successful
+  }).catch(function(err) {
+    // registration failed :(
+  });
+}</code></pre><aside class="notes"><p>Telling browser there's a service worker here, and I'd like you to register it.</p></aside></section><section><figure style="text-align:center;"><img src="img/party-install-prompt.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"></figure><aside class="notes"><p>I didn't put this banner here.</p></aside></section><section><div class="grid" columns="2"><figure style="text-align:center;"><img src="img/screenshots/homescreen-2021-11-30.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"></figure><figure style="text-align:center;"><img src="img/screenshots/apparray-2021-11-30.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"></figure></div><aside class="notes"><p>My phone. My app, alongside "real apps"</p></aside></section><section><div class="grid" columns="2"><figure style="text-align:center;"><img src="img/party-splash.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"></figure><figure style="text-align:center;"><img src="img/party-focus.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"></figure></div><aside class="notes"><p>Left is load (short)</p><p>Right is app (chromeless)</p></aside></section><section><img src="img/app-switch.jpg" style="max-height:60vh; margin-left:auto; margin-right:auto;"><aside class="notes"><p>Runs separately from the browser</p></aside></section></section><section><section data-background-video="video/testing.mp4" data-background-video-loop="loop" data-background-size="contain"></section><section><figure><img src="img/lighthouse-1024x1024.png" style="max-height:55vh;"><figcaption><a href="https://web.dev/measure/" target="_blank">web.dev/measure</a></figcaption></figure><aside class="notes"><p>DON'T launch browser yet.</p></aside></section><section><figure><img src="img/lighthouse-before.png"></figure><aside class="notes"><p>NOW launch browser.</p></aside></section><section><figure><img src="img/lighthouse-after.png"></figure></section><section><h3>Strategy for Feature Rollout</h3><ol><li>Test it in Lighthouse</li><li>Get it working on your machine(s)</li><li>Get it working on friends/coworkers machine(s)</li><li><i>THEN</i> try it out on strangers</li></ol><aside class="notes"><p>Remember the SW can store things and disrupt your process. Keep it in mind when making updates.</p><p>NEXT: DAMN.DOG</p></aside></section></section><section><section><a href="https://damn.dog" target="_blank"><img src="img/damn-og-wide.png"></a></section><section><code>service-worker.js</code><pre style="font-size:1.5rem;"><code class="js" style="max-height:55vh;">const cacheName = 'v2.17';
+const offlineUrl = '/offline.html';
+const offlineFiles = [
+  '/index.html',
+  '/offline.html',
+  '/manifest.json',
+  '/css/damn.css',
+  '/js/libraries/vue.min.js',
+  '/js/min/damn.min.js',
+  '/svg/offline-dog.svg'
+];
+
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      return cache.addAll(cacheName);
+    })
+  );
+});
+
+self.addEventListener('fetch', function(event) {
+  // Only fall back for HTML documents.
+  var request = event.request;
+  // && request.headers.get('accept').includes('text/html')
+  if (request.method === 'GET') {
+    // `fetch()` will use the cache when possible, to this examples
+    // depends on cache-busting URL parameter to avoid the cache.
+    event.respondWith(
+      fetch(request).catch(function(error) {
+        // `fetch()` throws an exception when the server is unreachable but not
+        // for valid HTTP responses, even `4xx` or `5xx` range.
+        console.error(
+          '[onfetch] Failed. Serving cached offline fallback ' +
+          error
+        );
+        return caches.open('offline').then(function(cache) {
+          return cache.match(offlineUrl);
+        });
+      })
+    );
+  }
+  // Any other handlers come here. Without calls to `event.respondWith()` the
+  // request will be handled without the ServiceWorker.
+});
+</code></pre><aside class="notes"><p>Different needs</p></aside></section><section><img src="img/screenshots/damn-install-chrome.png"><aside class="notes"><p>I see this when I go to the site.</p><p>Also, you can build a button that does this (more later)</p></aside></section><section><img src="img/screenshots/damn-self-app.png"></section><section><img src="img/screenshots/damn-offline-full.png"><aside class="notes"><p>Not exciting, but useful.</p></aside></section><section><img src="img/logos/winstore.jpg"><aside class="notes"><p>To bulk up their inventory...</p><p>Fill out some forms.</p></aside></section><section data-background="img/screenshots/damn-winstore.png"><!--img(src="img/screenshots/damn-winstore.png")--></section><section data-background-video="video/fancy-omar.mp4" data-background-video-loop="loop" data-background-size="contain"><!--h3.shadowed Let's get even fancier--><figure><img src="img/fancier.png" style="max-width:600px;"></figure></section><section><img src="img/screenshots/damn-sidebar-open.png"></section><section><img src="img/screenshots/damn-sidebar-circled.png"></section><section><p>The Notification API</p><aside class="notes"><p>This is what your client wants.</p></aside></section><section><code>service-worker.js</code><pre style="font-size:1.5rem;"><code class="js" style="max-height:55vh;">// After the install code...
+
+Notification.requestPermission(result => {
+  if (result === 'granted') {
+    //permission granted.
+    navigator.serviceWorker.ready.then(registration => {
+      registration.showNotification(
+        'Damn Dog has been updated!', {
+        icon: '/android-chrome-96x96.png',
+        //vibrate: [500, 100, 500],
+        body: '7 new rounds have been added to damn.dog,
+               bringing the total up to 358.',
+        tag: 'game-updated'
+      });
+    });
+  }
+});
+</code></pre></section><section><figure><img src="img/pwa-notification.png"></figure><aside class="notes"><p>A brief word</p><p>PLEASE DON'T DO THIS</p></aside></section><section><figure><img src="img/screenshots/producthunt.gif"></figure><aside class="notes"><p>A brief word</p><p>PLEASE DON'T DO THIS</p></aside></section><section><p> <strong>Q: </strong>How do I push to users not currently on the website?</p><div class="fragment"><p> <strong>A: </strong>The same way you'd handle any other kind of push subscription</p><ul><li>Firebase</li><li>Twilio</li><li>OneSignal</li><li>etc.</li></ul></div><aside class="notes"><p>Can't get into that with the time we have</p><p>But I can show you where you can learn.</p></aside></section></section><section><section><h3>Where do you go from here?</h3></section><section data-background="img/gif/cooking.gif"><h2 class="shadowed" style="margin-top:30vh">Get cooking!</h2></section><section><figure><a href="https://www.pwabuilder.com/" target="_blank"><img src="img/logos/pwa-builder.png" style="margin-bottom:3em;"></a><figcaption>by Microsoft</figcaption></figure></section><!-- Retiring this one...--><!--sectionfigure
+  a(href="https://serviceworke.rs" target="_blank")
+    img(src="img/logos/mozilla-serviceworkrs.svg")
+
+--><section><figure><a href="https://web.dev/pwa" target="_blank"><img src="img/logos/webdev.svg" style="margin-bottom:3em;"></a><figcaption><by>by Google</by></figcaption></figure></section><section><figure><h2><a href="https://whatpwacando.today/" target="_blank">What PWA Can<br>Do Today</a></h2><figcaption>by Danny Moerkerke</figcaption></figure></section><section><figure><a href="https://serviceworkies.com" target="_blank"><img src="img/logos/serviceworkies.png"></a><figcaption>by Dave Geddes</figcaption></figure></section></section><section><section><p>When thinking of</p><h2>Progressive Web Apps</h2><div class="fragment"><h2>^^^^^^^^^^ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;</h2></div></section><section><img src="img/gif/escape.gif"></section><section><h3>Escape the walled garden.</h3></section><section><p>Make things better.<span class="fragment">&nbsp; It's your responsibility.</span><div class="fragment">And your pleasure.</div></p></section></section><!-- THANK YOU--><section><section data-background="img/gif/simone_lemon_maker_faire.gif"><h1 class="white" style="padding-top:40vh; text-shadow:0.05em 0.05em 0.05em black, -1px -1px 1px black">Thank you.</h1><p class="white shadowed"><a href="https://ahoylemon.xyz" target="_blank"> <strong>ahoylemon.xyz</strong></a></p><aside class="notes"><p>Wish I could be there.</p><p>Maybe next time?</p><p>Questions?</p></aside></section><section data-background="#e6e924"><figure><img src="svg/lemon.svg" style="width:212px; height:212px;"></figure><aside class="notes"><h1>STICKERS</h1></aside></section></section></div></div><script src="lib/js/head.min.js"></script><script src="js/reveal.js"></script><script>// More info about config & dependencies:
+// - https://github.com/hakimel/reveal.js#configuration
+// - https://github.com/hakimel/reveal.js#dependencies
+Reveal.initialize({
+  history: true,
+  autoPlayMedia: true,
+  //slideNumber: true,
+  dependencies: [
+  { src: 'plugin/markdown/marked.js' },
+  { src: 'plugin/markdown/markdown.js' },
+  { src: 'plugin/zoom-js/zoom.js' },
+  { src: 'plugin/notes/notes.js', async: true },
+  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+  ]
+});</script></body>

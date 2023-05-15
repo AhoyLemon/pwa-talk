@@ -7,66 +7,14 @@ body
 
   .reveal
     .slides
-      section
-
-        // Extreme Crew (Korea)
-        +videoBG('jSZ9QB5Myw4',370) 
-          h2.shadowed
-            | Progressive Web Apps!
-            sup *
-          .a-talk-by(style="margin-top:25.5vh;")
-            b.white.shadowed
-              | (a talk by @AhoyLemon)
-            br
-            br
-            div.shadowed(style="font-size:26px; line-height:120%") * This talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
-
-          aside.notes
-            h2 Jinjo Crew (Korea)
-              br
-              | vs 
-              br
-              | The Ruggeds (Netherlands)
-            p 2019
-
-        // Last Squad (france) vs Artistreet (Korea) | 2019
-        //- +videoBG('EzglYPf7Ylk',100)
-        //-   h2.shadowed
-        //-     | Progressive Web Apps!
-        //-     sup *
-        //-   .a-talk-by(style="margin-top:25.5vh;")
-        //-     b.white.shadowed
-        //-       | (a talk by @AhoyLemon)
-        //-     br
-        //-     br
-        //-     div.shadowed(style="font-size:26px; line-height:120%") * This talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
-
-        //-   aside.notes
-        //-     h2 Last Squad (france) vs Artistreet (Korea) | 2019
       
-      section
-        section
-          h1 Hi!
-          h2.fragment My name is Lemon.
-          p.fragment (I make websites.)
-          aside.notes
-            h2 I've been making websites for about 20 years. I make websites for money and I make websites for fun. I love the platform and I think it's a really great opportunity to make fun stuff.
+      // Video Screens
+      include sections/_intros
 
-        section
-          div(style="font-size:68px; font-family:'Lucida Console', Monaco, monospace;") 
-            span websites 
-            span.fragment != apps
-          aside.notes
-            h2 I consider myself a website maker, and that's different than somebody that makes apps.
-            h2 These words are used interchangably.
-        section
-          h3 Let me define my terms.
-          aside.notes
-            h2 We need to define our terms here because a website can be an app.
-            h2 The word "webapp" exists, and that's valid.
-            h2 When I think about websites, I think about freedom.
-            h2 I think about 3 technologies.
-            
+      include sections/_hello
+
+      
+      section    
         section
           .grid(columns="3")
             .box
@@ -155,6 +103,7 @@ body
             li app signing
             li plugin versioning
             li incompatable dependencies
+            li incompatable phones
             li style & content rules
             li changing rules
             li possibility of rejection
@@ -307,7 +256,7 @@ body
             p Google worked on the majority of it. Mozilla and Microsoft helped a lot.
         
         section
-          p What is a PWA?
+          p What can you do with a PWA?
           p.fragment Potentially a lot of things.
         
         section
@@ -333,7 +282,7 @@ body
           p What do you need?
           ol
             li 
-              strong HTTPS connection
+              span HTTPS connection
             li 
               code manifest.json
             li
