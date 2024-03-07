@@ -273,6 +273,12 @@
   -webkit-transition-delay: 1s;
           transition-delay: 1s;
 }
+.reveal .more-features figure img {
+  height: 50vh;
+}
+.reveal .more-features figure figcaption {
+  padding-top: 5vh;
+}
 
 .example {
   height: 60vh;

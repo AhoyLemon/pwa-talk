@@ -82,6 +82,12 @@
     > .source { opacity: 1; transition-delay: 1s; }
   }
 
+  .more-features {
+    figure {
+      img { height:50vh; }
+      figcaption { padding-top:5vh; }
+    }
+  }
 }
 
 .example { height:60vh; overflow-y: scroll; position:relative;

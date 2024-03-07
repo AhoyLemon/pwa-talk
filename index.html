@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>How To Make Your Website A PWA</title>
+  <title>SKILLSHARE: PWA's are super duper cool</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Work+Sans:300,400,700">
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
@@ -30,7 +30,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:creator" content="@AhoyLemon">
-  <meta name="twitter:title" content="How To Make Your Website A PWA">
+  <meta name="twitter:title" content="SKILLSHARE: PWA's are super duper cool">
   <meta name="twitter:description" content="A talk by Lemon 🍋 - the full title is How To Make Your Website A Progressive Web App (And Why You Might Want To)">
   <meta name="twitter:image" content="https://ahoylemon.github.io/pwa-talk/img/og-image.png">
   <meta name="twitter:url" content="https://ahoylemon.github.io/pwa-talk">
@@ -76,30 +76,14 @@
           <h2 class="fragment">My name is Lemon.</h2>
           <p class="fragment">(I make websites.)</p>
           <aside class="notes">
-            <h2>I've been making websites for about 20 years. I make websites for money and I make websites for fun. I love the platform and I think it's a really great opportunity to make fun stuff.</h2>
+            <aside class="notes"></aside>
+            <ul>
+              <li>making websites for > 20 years</li>
+              <li>for fun & for freedom</li>
+              <li>love the web platform</li>
+              <li>continues to be interesting</li>
+            </ul>
           </aside>
-        </section>
-        <section data-background="img/bg/savas-cyan-1.png">
-          <h4 style="color:#221c35; text-shadow:none;">I work at</h4>
-          <div class="fragment" style="padding-bottom:7vh;"><img src="svg/savas-logo-black.svg" alt="Savas Labs" style="max-height:22vh;"></div>
-        </section>
-        <section data-background="img/bg/savas-cyan-2.png" data-background-transition="none">
-          <div style="color:#221c35; padding-bottom:9vh;">
-            <h2 style="text-shadow:none; color:#221c35;">Front End Lead</h2>
-            <div class="fragment">
-              <ul>
-                <li>Mentoring</li>
-                <li>Shepherding</li>
-                <li>Documenting</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section data-transition="fade" data-background="img/bg/savas-cyan-2.png">
-          <div class="over-photo"><code>I am a serious professional.</code></div>
-        </section>
-        <section data-transition="none" data-background-image="img/gif/shooty-frooty.gif" data-background-size="contain">
-          <div class="over-photo"><code>I am a serious professional.</code></div>
         </section>
       </section>
       <!-- Websites != Apps-->
@@ -591,214 +575,43 @@ if ('serviceWorker' in navigator) {
           </aside>
         </section>
       </section>
+      <!-- MORE FEATURES...-->
+      <section class="more-features">
+        <section data-background="#dddddd">
+          <figure><img src="svg/noun-share-3772303.svg">
+            <figcaption>Native Sharing</figcaption>
+          </figure>
+        </section>
+        <section data-background="#dddddd">
+          <figure><img src="svg/noun-vibration-6223171.svg">
+            <figcaption>Vibration</figcaption>
+          </figure>
+        </section>
+        <section data-background="#dddddd">
+          <figure><img src="svg/noun-payment-1645634.svg">
+            <figcaption>Native Payment API</figcaption>
+          </figure>
+        </section>
+        <section data-background="#dddddd">
+          <figure><img src="svg/noun-fingerprint-237324.svg">
+            <figcaption>Fingerprint Authentication</figcaption>
+          </figure>
+        </section>
+        <section data-background="#dddddd">
+          <figure><img src="svg/noun-face-detection-3592734.svg">
+            <figcaption>Face Detection</figcaption>
+          </figure>
+        </section>
+        <section data-background="#dddddd">
+          <figure><img src="svg/noun-notification-1157125.svg">
+            <figcaption>Notifications</figcaption>
+          </figure>
+        </section>
+        <section data-background="#ffffff"><a href="https://whatpwacando.today/"><img src="img/all-the-things.png"></a></section>
+      </section>
       <!-- TESTING...-->
-      <section>     
-        <section data-background-video="video/testing.mp4" data-background-video-loop="loop" data-background-size="contain"></section>
-        <section>
-          <figure><img src="img/logos/lighthouse-1024x1024.png" style="max-height:55vh;">
-            <figcaption><a href="https://web.dev/measure/" target="_blank">web.dev/measure</a></figcaption>
-          </figure>
-          <aside class="notes">
-            <p>DON'T launch browser yet.</p>
-          </aside>
-        </section>
-        <section>
-          <figure><img src="img/screenshots/lighthouse-before.png"></figure>
-          <aside class="notes">
-            <p>NOW launch browser.</p>
-          </aside>
-        </section>
-        <section>
-          <figure><img src="img/screenshots/lighthouse-after.png"></figure>
-        </section>
-        <section>
-          <h3>Strategy for Feature Rollout</h3>
-          <ol>
-            <li>Test it in Lighthouse</li>
-            <li>Get it working on your machine(s)</li>
-            <li>Get it working on friends/coworkers machine(s)</li>
-            <li><i>THEN</i> try it out on strangers</li>
-          </ol>
-          <aside class="notes">
-            <p>Remember the SW can store things and disrupt your process. Keep it in mind when making updates.</p>
-            <p>NEXT: DAMN.DOG</p>
-          </aside>
-        </section>
-      </section>
       <!-- DAMN DOG-->
-      <section>
-        <section><a href="https://damn.dog" target="_blank"><img src="img/logos/damn-og-wide.png"></a></section>
-        <section><code>service-worker.js</code>
-          <pre><code class="js">const cacheName = 'v2.17';
-const offlineUrl = '/offline.html';
-const offlineFiles = [
-  '/index.html',
-  '/offline.html',
-  '/manifest.json',
-  '/css/damn.css',
-  '/js/libraries/vue.min.js',
-  '/js/min/damn.min.js',
-  '/svg/offline-dog.svg'
-];
-
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return cache.addAll(cacheName);
-    })
-  );
-});
-
-self.addEventListener('fetch', function(event) {
-  // Only fall back for HTML documents.
-  var request = event.request;
-  // && request.headers.get('accept').includes('text/html')
-  if (request.method === 'GET') {
-    // `fetch()` will use the cache when possible, to this examples
-    // depends on cache-busting URL parameter to avoid the cache.
-    event.respondWith(
-      fetch(request).catch(function(error) {
-        // `fetch()` throws an exception when the server is unreachable but not
-        // for valid HTTP responses, even `4xx` or `5xx` range.
-        console.error(
-          '[onfetch] Failed. Serving cached offline fallback ' +
-          error
-        );
-        return caches.open('offline').then(function(cache) {
-          return cache.match(offlineUrl);
-        });
-      })
-    );
-  }
-  // Any other handlers come here. Without calls to `event.respondWith()` the
-  // request will be handled without the ServiceWorker.
-});
-</code></pre>
-          <aside class="notes">
-            <p>Different needs</p>
-          </aside>
-        </section>
-        <section><img src="img/screenshots/damn-install-chrome.png">
-          <aside class="notes">
-            <p>I see this when I go to the site.</p>
-            <p>Also, you can build a button that does this (more later)</p>
-          </aside>
-        </section>
-        <section><img src="img/screenshots/damn-self-app.png"></section>
-        <section><img src="img/screenshots/damn-offline-full.png">
-          <aside class="notes">
-            <p>Not exciting, but useful.</p>
-          </aside>
-        </section>
-        <section><img src="img/logos/winstore.jpg">
-          <aside class="notes">
-            <p>To bulk up their inventory...</p>
-            <p>Fill out some forms.</p>
-          </aside>
-        </section>
-        <section data-background="img/screenshots/damn-winstore.png"></section>
-        <section data-background-video="video/fancy-omar.mp4" data-background-video-loop="loop" data-background-size="contain">
-          <figure><img src="img/fancier.png" style="max-width:600px;"></figure>
-        </section>
-        <section><img src="img/screenshots/damn-sidebar-open.png"></section>
-        <section><img src="img/screenshots/damn-sidebar-circled.png"></section>
-        <section>
-          <p>The Notification API</p>
-          <aside class="notes">
-            <p>This is what your client wants.</p>
-          </aside>
-        </section>
-        <section><code>service-worker.js</code>
-          <pre><code class="js">// After the install code...
-
-Notification.requestPermission(result => {
-  if (result === 'granted') {
-    //permission granted.
-    navigator.serviceWorker.ready.then(registration => {
-      registration.showNotification(
-        'Damn Dog has been updated!', {
-        icon: '/android-chrome-96x96.png',
-        //vibrate: [500, 100, 500],
-        body: '7 new rounds have been added to damn.dog,
-                bringing the total up to 358.',
-        tag: 'game-updated'
-      });
-    });
-  }
-});
-</code></pre>
-        </section>
-        <section>
-          <figure><img src="img/screenshots/pwa-notification.png"></figure>
-          <aside class="notes">
-            <p>A brief word</p>
-            <p>PLEASE DON'T DO THIS</p>
-          </aside>
-        </section>
-        <section>
-          <figure><img src="img/screenshots/producthunt.gif"></figure>
-          <aside class="notes">
-            <p>A brief word</p>
-            <p>PLEASE DON'T DO THIS</p>
-          </aside>
-        </section>
-        <section>
-          <p> <strong>Q: </strong>How do I push to users not currently on the website?</p>
-          <div class="fragment">
-            <p> <strong>A: </strong>The same way you'd handle any other kind of push subscription</p>
-            <ul>
-              <li>Firebase</li>
-              <li>Twilio</li>
-              <li>OneSignal</li>
-              <li>etc.</li>
-            </ul>
-          </div>
-          <aside class="notes">
-            <p>Can't get into that with the time we have</p>
-            <p>But I can show you where you can learn.</p>
-          </aside>
-        </section>
-      </section>
       <!-- RESOURCES-->
-      <section>
-        <section>
-          <h3>Where do you go from here?</h3>
-        </section>
-        <section data-background="img/gif/cooking.gif">
-          <h2 class="shadowed" style="margin-top:30vh">Get cooking!</h2>
-        </section>
-        <section>
-          <figure><a href="https://www.pwabuilder.com/" target="_blank"><img src="img/logos/pwa-builder.png" style="margin-bottom:3em;"></a>
-            <figcaption>by Microsoft</figcaption>
-          </figure>
-        </section>
-        <!-- Retiring this one...-->
-        <!--section
-        figure
-          a(href="https://serviceworke.rs" target="_blank")
-            img(src="img/logos/mozilla-serviceworkrs.svg")
-        
-        
-        -->
-        <section>
-          <figure><a href="https://web.dev/pwa" target="_blank"><img src="img/logos/webdev.svg" style="margin-bottom:3em;"></a>
-            <figcaption>
-              <by>by Google</by>
-            </figcaption>
-          </figure>
-        </section>
-        <section>
-          <figure>
-            <h2><a href="https://whatpwacando.today/" target="_blank">What PWA Can<br>Do Today</a></h2>
-            <figcaption>by Danny Moerkerke</figcaption>
-          </figure>
-        </section>
-        <section>
-          <figure><a href="https://serviceworkies.com" target="_blank"><img src="img/logos/serviceworkies.png"></a>
-            <figcaption>by Dave Geddes</figcaption>
-          </figure>
-        </section>
-      </section>
       <!-- MAKE THINGS BETTER-->
       <section>
         <section>
