@@ -23,6 +23,12 @@
 
 
 .reveal {
+
+  .video-flex.hello {
+    height:99vh;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+
   h1, h2, h3 { text-transform: none; }
 
   h2.shadowed { text-shadow: 1px 1px 0 black, -1px -1px 0 black, 4px 4px 0 rgba(0,0,0,0.5); }

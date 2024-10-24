@@ -1,36 +1,25 @@
+mixin intro(slug,start)
+  +videoBG(slug,start)
+    .video-flex.hello
+      .top
+        h2.shadowed
+          | Progressive Web Apps!
+          sup *
+        .a-talk-by
+          b.white.shadowed
+            | (a talk by Lemon)
+      .bottom
+        .site
+          b.white.shadowed
+            | ahoylemon.xyz
+          br
+          div.shadowed(style="font-size:26px; line-height:120%") 
+            em * This talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
+
 section
 
   // Extreme Crew (Korea)
-  +videoBG('jSZ9QB5Myw4',370) 
-    h2.shadowed
-      | Progressive Web Apps!
-      sup *
-    .a-talk-by(style="margin-top:25.5vh;")
-      b.white.shadowed
-        | (a talk by @AhoyLemon)
-      br
-      br
-      div.shadowed(style="font-size:26px; line-height:120%") * This talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
-
-    aside.notes
-      h2 Jinjo Crew (Korea)
-        br
-        | vs 
-        br
-        | The Ruggeds (Netherlands)
-      p 2019
+  +intro('jSZ9QB5Myw4',370)
 
   // Last Squad (france) vs Artistreet (Korea) | 2019
-  +videoBG('EzglYPf7Ylk',100)
-    h2.shadowed
-      | Progressive Web Apps!
-      sup *
-    .a-talk-by(style="margin-top:25.5vh;")
-      b.white.shadowed
-        | (a talk by @AhoyLemon)
-      br
-      br
-      div.shadowed(style="font-size:26px; line-height:120%") * This talk is actually called "How To Make Your Website A Progressive Web App (And Why You Might Want To)", but that's entirely too long
-
-    aside.notes
-      h2 Last Squad (france) vs Artistreet (Korea) | 2019
+  +intro('EzglYPf7Ylk',100)
