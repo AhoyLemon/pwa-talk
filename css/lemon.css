@@ -103,6 +103,9 @@
     opacity: 1;
   }
 }
+.reveal a {
+  color: yellow;
+}
 .reveal .video-flex.hello {
   height: 99vh;
   display: -webkit-box;
@@ -161,8 +164,7 @@
 }
 .reveal .over-photo {
   background: rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   padding: 1.5rem;
 }
 .reveal .grid {
@@ -262,8 +264,7 @@
   bottom: 15px;
   left: 0;
   background: rgba(0, 0, 0, 0.65);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   font-size: 18px;
   font-family: monospace;
   color: white;
@@ -307,4 +308,42 @@
 
 .bottom-center {
   background-position: center bottom 28% !important;
+}
+
+table {
+  width: 100%;
+}
+table caption {
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+table th {
+  font-size: 80%;
+  font-weight: 700;
+}
+table th.small,
+table td.small,
+table tr.small td {
+  font-size: 60%;
+  vertical-align: middle;
+  padding-bottom: 0.5em;
+}
+table tr.highlight td {
+  background: white;
+  color: black;
+}
+table td {
+  vertical-align: middle;
+}
+table .no-line {
+  border: none;
+}
+table svg,
+table svg * {
+  fill: currentColor;
+}
+table svg[role=img] {
+  width: 1.5em;
+  height: 1.5em;
 }

@@ -24,6 +24,8 @@
 
 .reveal {
 
+  a { color: yellow;   }
+
   .video-flex.hello {
     height:99vh;
     display: flex; flex-direction: column; justify-content: space-between;
@@ -96,3 +98,44 @@
 }
 
 .bottom-center { background-position:center bottom 28% !important; }
+
+// Table with row highlights
+  table {
+    width: 100%;
+    caption {
+      font-size: 80%;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    th {
+      font-size: 80%;
+      font-weight: 700;
+    }
+    th.small,
+    td.small,
+    tr.small td {
+      font-size: 60%;
+      vertical-align: middle;
+      padding-bottom: 0.5em;
+    }
+    tr.highlight {
+      td {
+        background: white;
+        color: black;
+      }
+    }
+    td {
+      vertical-align: middle;
+    }
+    .no-line {
+      border: none;
+    }
+    svg,
+    svg * {
+      fill: currentColor;
+    }
+    svg[role="img"] {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
